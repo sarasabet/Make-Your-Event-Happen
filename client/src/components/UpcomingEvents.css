@@ -1,0 +1,9 @@
+.bg-container {
+  height: 80vh;
+  background-color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    to right bottom,
+    hsl(0, 0%, 100%) 65%,
+    #ffad81 120%
+  );
+}
