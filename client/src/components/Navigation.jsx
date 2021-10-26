@@ -1,20 +1,20 @@
 import * as ReactBootstrap from 'react-bootstrap';
+import './Navigation.css'
+
 
 function Navigation() {
   return (
-<ReactBootstrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <ReactBootstrap.Container>
-  <ReactBootstrap.Navbar.Brand href="#home">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
-  <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
+    <ReactBootstrap.Navbar class="shadow-lg p-3 mb-5 bg-white rounded" collapseOnSelect expand="lg" bg="light" variant="light">
+      <ReactBootstrap.Container>
+        <ReactBootstrap.Navbar.Brand >Make YOur Event HAppen</ReactBootstrap.Navbar.Brand>
+        <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
 
-    <ReactBootstrap.Nav>
-      <ReactBootstrap.Nav.Link href="#deets">Signup</ReactBootstrap.Nav.Link>
-     
-    </ReactBootstrap.Nav>
-  </ReactBootstrap.Navbar.Collapse>
-  </ReactBootstrap.Container>
-</ReactBootstrap.Navbar>
+       
+            <ReactBootstrap.Nav.Link  class='bookEvent-link'href="eventinfo">Book Event</ReactBootstrap.Nav.Link>
+        
+        </ReactBootstrap.Navbar.Collapse>
+      </ReactBootstrap.Container>
+    </ReactBootstrap.Navbar>
   )
 }
 

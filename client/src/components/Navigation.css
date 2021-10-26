@@ -1,0 +1,8 @@
+.hadow p-3 mb-5 bg-white rounded {
+  background-color: hsl(0, 0%, 100%);
+}
+.bookEvent-link {
+  background-color: black;
+  border-radius: 3.4722222222vw;
+  
+}
