@@ -10,7 +10,7 @@ function HomePage() {
     <Card style={{ width: "100%" }}>
       <Card.Body>
         <div>
-          <Card.Title >We make all your dream events happen with a click </Card.Title>
+          <Card.Title>We make all your dream events happen with a click </Card.Title>
           <Card.Subtitle className="mb-2 text-muted">your event</Card.Subtitle>
           <Card.Text>
             We make all your dream events happen with a click

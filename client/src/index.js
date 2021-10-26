@@ -4,7 +4,7 @@ import './index.css';
 import './custom.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Button } from 'react-bootstrap';
+
 
 ReactDOM.render(
   <React.StrictMode>
