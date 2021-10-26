@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=Navigation.css.map */
+.nav-bar-color {
+  background-color: white;
+}
+
+.signinBtn {
+  background-color: black;
+  border: black solid;
+  border-radius: 35%;
+  padding-left: 2em;
+  padding-right: 2em;
+  color: white;
+  text-decoration: none;
+  -webkit-box-shadow: #a09b9b;
+          box-shadow: #a09b9b;
+}
+/*# sourceMappingURL=Navigation.css.map */
