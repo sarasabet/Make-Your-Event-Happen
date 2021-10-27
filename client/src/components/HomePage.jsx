@@ -5,28 +5,38 @@ import {
   Link
 } from "react-router-dom";
 
+
 function HomePage() {
   return (
     <Router>
-    <div class='container-homepage'>
-      <div>
-        <p>Any event</p>
-        <p>Every audience</p>
-        <p>One platform.</p>
-      </div>
-      <div>
-        <div>
-        MYEH is the all-in-one event platform that powers continuous engagement to drive better results for virtual, in-person, and hybrid events.
+
+      <div class="parent-container d-flex">
+        <div class="container-left">
+          <div class="row">
+            <div  class="col">
+              <h1>Any event</h1>
+              <h1>Every audience</h1>
+              <h1>One platform.</h1>
+            </div>
+          </div>
         </div>
-        <div></div>
-      <Link class='bookevent-btn'to="/bookevent">Book Event</Link>
-      </div>
-      <div>
-      <Link class='learnMore-btn'to="/aboutus">Learn More</Link>
-      </div>
+
+        <div class="container-right">
+          <div class="row">
+            <div class="col">
+              This is a longer card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit longer
+            </div>
+            <div class='mcontainer-right-linksd' >
+
+              <Link md  className='bookevent-btn md fluid' to="/bookevent">Book Event</Link>
+              <Link md  className='learnMore-btn md' to="/aboutus">Learn More</Link>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </Router>
+    </Router >
   )
 }
 
