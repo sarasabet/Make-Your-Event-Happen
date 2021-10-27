@@ -1,8 +1,15 @@
-.hadow p-3 mb-5 bg-white rounded {
-  background-color: hsl(0, 0%, 100%);
+.navbar {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px -2px rgba(105, 91, 91, 0.2)
+
 }
-.bookEvent-link {
+.bookevent-btn {
   background-color: black;
   border-radius: 3.4722222222vw;
+  color:white;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: 1em;
+  text-decoration: none;
   
 }

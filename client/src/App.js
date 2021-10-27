@@ -5,18 +5,28 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import './App.css';
 import SelectHourDay from './components/SelectHourDay'
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 
   return (
     <div className="App">
-      <Navigation/>
-     <UpcomingEvents />
-     <SelectBooking />
-     <SignIn />
-     <SignUp />
+      <Router>
+        <Navigation />
+        <UpcomingEvents />
+        <SelectBooking />
+        <SignIn />
+        <SignUp />
 
-      <SelectHourDay />
+        <SelectHourDay />
+        
+      </Router>
 
     </div >
   );
