@@ -1,0 +1,20 @@
+.container-homepage{
+  height: 80vh;
+  background-color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    to right bottom,
+    hsl(0, 0%, 100%) 65%,
+    #ffad81 120%
+  );
+}
+.learnMore-btn {
+    background-color: black;
+    border-radius: 3.4722222222vw;
+    color:white;
+    padding-left: 3em;
+    padding-right: 3em;
+    margin: 1em;
+    text-decoration: none;
+    
+}
+

@@ -5,6 +5,8 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import './App.css';
 import SelectHourDay from './components/SelectHourDay'
+import HomePage from './components/HomePage';
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -19,13 +21,14 @@ function App() {
     <div className="App">
       <Router>
         <Navigation />
+        <HomePage/>
         <UpcomingEvents />
         <SelectBooking />
         <SignIn />
         <SignUp />
 
         <SelectHourDay />
-        
+
       </Router>
 
     </div >
