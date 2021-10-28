@@ -27,7 +27,7 @@ function HomePage() {
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit longer
             </div>
-            <div class='mcontainer-right-linksd' >
+            <div class='container-right-linksd' >
 
               <Link md  className='bookevent-btn md fluid' to="/bookevent">Book Event</Link>
               <Link md  className='learnMore-btn md' to="/aboutus">Learn More</Link>

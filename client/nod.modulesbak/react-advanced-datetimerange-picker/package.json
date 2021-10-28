@@ -1,0 +1,114 @@
+{
+  "_args": [
+    [
+      "react-advanced-datetimerange-picker@1.0.14",
+      "/vagrant/final/Make-Your-Event-Happen/client"
+    ]
+  ],
+  "_from": "react-advanced-datetimerange-picker@1.0.14",
+  "_id": "react-advanced-datetimerange-picker@1.0.14",
+  "_inBundle": false,
+  "_integrity": "sha512-FbPTTP+JQniJKHLpuj6Q2gXGqKr/D4XSmzE8fkE1Udpmt0OqhN7dFPx1Zib/3CvUB5wabeWsHN5zceWFj+DAjw==",
+  "_location": "/react-advanced-datetimerange-picker",
+  "_phantomChildren": {
+    "@babel/runtime": "7.15.4",
+    "babel-runtime": "6.26.0",
+    "classnames": "2.3.1",
+    "invariant": "2.2.4",
+    "keycode": "2.2.0",
+    "loose-envify": "1.4.0",
+    "prop-types": "15.7.2",
+    "prop-types-extra": "1.1.1",
+    "react-overlays": "0.7.4"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-advanced-datetimerange-picker@1.0.14",
+    "name": "react-advanced-datetimerange-picker",
+    "escapedName": "react-advanced-datetimerange-picker",
+    "rawSpec": "1.0.14",
+    "saveSpec": null,
+    "fetchSpec": "1.0.14"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-advanced-datetimerange-picker/-/react-advanced-datetimerange-picker-1.0.14.tgz",
+  "_spec": "1.0.14",
+  "_where": "/vagrant/final/Make-Your-Event-Happen/client",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "bugs": {
+    "url": "https://github.com/v0ltoz/react-datetimepicker/issues"
+  },
+  "dependencies": {
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "react-bootstrap": "^0.31.3",
+    "react-dot-fragment": "^0.2.7",
+    "react-moment-proptypes": "^1.6.0"
+  },
+  "description": "[![CircleCI](https://circleci.com/gh/v0ltoz/react-datetimepicker.svg?style=svg)](https://circleci.com/gh/v0ltoz/react-datetimepicker)\r [![](https://badge.fury.io/js/react-advanced-datetimerange-picker.svg)](https://www.npmjs.com/package/react-advanced-datetimerange-picker)\r [![Maintainability](https://api.codeclimate.com/v1/badges/3b5c72752ef7cf3932b9/maintainability)](https://codeclimate.com/github/v0ltoz/react-datetimepicker/maintainability)\r [![Test Coverage](https://api.codeclimate.com/v1/badges/3b5c72752ef7cf3932b9/test_coverage)](https://codeclimate.com/github/v0ltoz/react-datetimepicker/test_coverage)\r <br>\r <b>\r See the working demo over at codesandbox.io\r </b>\r <br>\r React 15 Demo\r <br>\r https://codesandbox.io/s/zxoo178m03?fontsize=14&module=%2Fsrc%2FApp.js\r <br>\r <br>\r React 16 Demo\r <br>\r https://codesandbox.io/s/v6z8l7nr8y?fontsize=14&module=%2Fsrc%2FApp.js",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.1.0",
+    "cypress": "^3.4.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-15": "^1.1.1",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-import-resolver-webpack": "0.10.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "moment-timezone": "0.5.31",
+    "prettier": "1.14.3",
+    "react": "15.6.2",
+    "react-dom": "15.6.2",
+    "react-scripts": "^3.4.3",
+    "react-test-renderer": "^15.6.2"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://github.com/v0ltoz/react-datetimepicker#readme",
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/lib/utils/*.{js,jsx}",
+      "**/src/lib/date_picker/*.{js,jsx}",
+      "**/src/lib/calendar/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/cypress/**"
+    ]
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "name": "react-advanced-datetimerange-picker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v0ltoz/react-datetimepicker.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build-win": "set NODE_ENV=production && .\\node_modules\\.bin\\babel src\\lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run --record --key 70c7ef71-f9c5-4b64-8b2a-65b3dc1f70d7",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "version": "1.0.14"
+}

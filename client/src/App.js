@@ -14,19 +14,21 @@ import {
   Link
 } from "react-router-dom";
 
+import Calender from './components/Calaender'
+
 function App() {
 
   return (
     <div className="App">
       <Router>
-
+        
         <Navigation />
         <HomePage/>
         <UpcomingEvents />
         <SelectBooking />
         <SignIn />
         <SignUp />
-     
+        <Calender />
 
       </Router>
 

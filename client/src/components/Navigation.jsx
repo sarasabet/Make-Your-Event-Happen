@@ -8,7 +8,7 @@ function Navigation() {
 
     <ReactBootstrap.Navbar className='navbar hadow p-3 mb-5 bg-body rounded' fixed="top"  collapseOnSelect expand="lg"  variant="light">
       <ReactBootstrap.Container>
-        <ReactBootstrap.Navbar.Brand className='brand' href="/">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
+        <ReactBootstrap.Navbar.Brand style={{color:'red'}} className='brand' href="/">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
 
           <ReactBootstrap.Nav>
             <Link className='bookevent-btn'to="/Book Event">Book Event</Link>

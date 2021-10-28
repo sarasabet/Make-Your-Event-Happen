@@ -13,3 +13,6 @@
   text-decoration: none;
   pad: 1em;
 }
+.bookevent-btn:hover {
+  background-color: blue;
+}
