@@ -1,0 +1,28 @@
+.admin-container {
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.admin-nav {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.admin-nav-left {
+  display: flex;
+  align-items: flex-start;
+}
+.admin-nav-right {
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.main-container {
+  border: white;
+  height: auto;
+}
