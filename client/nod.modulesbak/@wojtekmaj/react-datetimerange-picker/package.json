@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@wojtekmaj/react-datetimerange-picker@3.4.2",
-      "/vagrant/final/Make-Your-Event-Happen/client"
-    ]
-  ],
-  "_from": "@wojtekmaj/react-datetimerange-picker@3.4.2",
+  "_from": "@wojtekmaj/react-datetimerange-picker@^3.4.2",
   "_id": "@wojtekmaj/react-datetimerange-picker@3.4.2",
   "_inBundle": false,
   "_integrity": "sha512-/BbvBR2ZUTOZNcyYMEmlRWmxCnI3EclXLIsycvRM8tdZRyct6Z1AFCMavs1z6mvjNSdp+Rlc0WpN4pzS7B1hmQ==",
   "_location": "/@wojtekmaj/react-datetimerange-picker",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@wojtekmaj/react-datetimerange-picker@3.4.2",
+    "raw": "@wojtekmaj/react-datetimerange-picker@^3.4.2",
     "name": "@wojtekmaj/react-datetimerange-picker",
     "escapedName": "@wojtekmaj%2freact-datetimerange-picker",
     "scope": "@wojtekmaj",
-    "rawSpec": "3.4.2",
+    "rawSpec": "^3.4.2",
     "saveSpec": null,
-    "fetchSpec": "3.4.2"
+    "fetchSpec": "^3.4.2"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@wojtekmaj/react-datetimerange-picker/-/react-datetimerange-picker-3.4.2.tgz",
-  "_spec": "3.4.2",
+  "_shasum": "676755ddde1ea0a34bf7853536e1e39b7c60eb43",
+  "_spec": "@wojtekmaj/react-datetimerange-picker@^3.4.2",
   "_where": "/vagrant/final/Make-Your-Event-Happen/client",
   "author": {
     "name": "Wojciech Maj",
@@ -35,6 +31,7 @@
   "bugs": {
     "url": "https://github.com/wojtekmaj/react-datetimerange-picker/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "make-event-props": "^1.1.0",
     "merge-class-names": "^1.1.1",
@@ -44,6 +41,7 @@
     "react-datetime-picker": "^3.4.1",
     "react-fit": "^1.0.3"
   },
+  "deprecated": false,
   "description": "A datetime range picker for your React app.",
   "devDependencies": {
     "@babel/cli": "^7.15.0",

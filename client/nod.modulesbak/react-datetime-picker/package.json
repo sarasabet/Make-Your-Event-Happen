@@ -22,8 +22,7 @@
     "fetchSpec": "3.4.2"
   },
   "_requiredBy": [
-    "/",
-    "/@wojtekmaj/react-datetimerange-picker"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/react-datetime-picker/-/react-datetime-picker-3.4.2.tgz",
   "_spec": "3.4.2",

@@ -1,19 +1,19 @@
 {
-  "_from": "react-datepicker@^4.3.0",
+  "_from": "react-datepicker",
   "_id": "react-datepicker@4.3.0",
   "_inBundle": false,
   "_integrity": "sha512-cg+gp4YnPcZc6iZ0+v7VuRgcFG22KL7izHYrCxXeSLOn5VGkyxTfcu5qA/cGIsngurCt/u0NtgVTlHB1Fwap1g==",
   "_location": "/react-datepicker",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "react-datepicker@^4.3.0",
+    "raw": "react-datepicker",
     "name": "react-datepicker",
     "escapedName": "react-datepicker",
-    "rawSpec": "^4.3.0",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^4.3.0"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.3.0.tgz",
   "_shasum": "f2e2fc652b7ed3c231663d858da4a3c67f470784",
-  "_spec": "react-datepicker@^4.3.0",
+  "_spec": "react-datepicker",
   "_where": "/vagrant/final/Make-Your-Event-Happen/client",
   "author": {
     "name": "HackerOne"

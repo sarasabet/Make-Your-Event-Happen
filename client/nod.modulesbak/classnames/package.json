@@ -24,7 +24,6 @@
   "_requiredBy": [
     "/react-advanced-datetimerange-picker/react-bootstrap",
     "/react-bootstrap",
-    "/react-datepicker",
     "/react-overlays"
   ],
   "_resolved": "https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz",

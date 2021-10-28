@@ -22,15 +22,12 @@
     "fetchSpec": "1.4.0"
   },
   "_requiredBy": [
-    "/history",
     "/invariant",
     "/prop-types",
     "/react",
     "/react-advanced-datetimerange-picker/warning",
     "/react-dom",
     "/react-overlays/warning",
-    "/react-router",
-    "/react-router-dom",
     "/react-transition-group",
     "/scheduler",
     "/warning"

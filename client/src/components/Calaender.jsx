@@ -21,25 +21,13 @@ const Calender = () => {
     setCheckOutDate(date);
   };
 
-
 //getDay get a date Oct.27.2021 and give back a number 0 to 6 according to that date
   const isWeekday = (date) => {
     const day = getDay(date);
-    return day !== 1 && day !== 6;
+    return day !== 0 && day !== 6;
   };
-  // const daysHighlighted = new Array(numberOfDaysToAdd).fill(endDate );
-  // const endDate = new Date();
-  // const numberOfDaysToAdd = 4;
-  // highlightDates={[
-  //   {
-  //     "highlighted-class": daysHighlighted.map((day, index) =>{
-  //       day.setDate(day.getDate() + index)
-  //       return new Date(day)
-  //     }
-  //     )
-  //   }
-  // ]}
-
+const bookedDays = [ new Date(),new Date(2021,9,30), new Date(2021,9,31), new Date(2021,10,3) ]
+  
   return (
     <div id='calender'>
       <h3> Please select a day </h3>
@@ -53,7 +41,7 @@ const Calender = () => {
             onChange={handleCheckInDate}
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
-            filterDate={isWeekday}
+            excludeDates={bookedDays}
 
               
           />
@@ -66,7 +54,7 @@ const Calender = () => {
             onChange={handleCheckOutDate}
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
-            filterDate={isWeekday}
+            excludeDates={bookedDays}
                          
           />
         </div>
@@ -76,7 +64,7 @@ const Calender = () => {
         {checkInDate && checkOutDate && (
           <div className="summary">
             <p>
-              You book an event from from {moment(checkInDate).format("LL")} to{" "}
+              You book an event from {moment(checkInDate).format("LL")} to{" "}
               {moment(checkOutDate).format("LL")}.
             </p>
           </div>

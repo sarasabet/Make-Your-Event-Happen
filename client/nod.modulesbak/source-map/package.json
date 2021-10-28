@@ -24,7 +24,6 @@
   "_requiredBy": [
     "/@babel/core",
     "/@babel/generator",
-    "/@emotion/babel-plugin",
     "/snapdragon"
   ],
   "_resolved": "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz",

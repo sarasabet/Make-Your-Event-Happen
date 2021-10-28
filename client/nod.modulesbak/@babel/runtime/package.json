@@ -23,9 +23,6 @@
     "fetchSpec": "7.15.4"
   },
   "_requiredBy": [
-    "/@emotion/babel-plugin",
-    "/@emotion/react",
-    "/@emotion/styled",
     "/@material-ui/core",
     "/@material-ui/core/@material-ui/utils",
     "/@material-ui/lab",
@@ -54,13 +51,9 @@
     "/babel-plugin-macros",
     "/dom-helpers",
     "/eslint-plugin-jsx-a11y",
-    "/history",
-    "/mini-create-react-context",
     "/react-advanced-datetimerange-picker/dom-helpers",
     "/react-bootstrap",
     "/react-overlays/dom-helpers",
-    "/react-router",
-    "/react-router-dom",
     "/react-transition-group",
     "/regenerator-transform",
     "/rifm",

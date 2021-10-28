@@ -22,7 +22,6 @@
     "fetchSpec": "1.3.2"
   },
   "_requiredBy": [
-    "/@wojtekmaj/react-datetimerange-picker",
     "/react-date-picker",
     "/react-datetime-picker",
     "/react-time-picker"

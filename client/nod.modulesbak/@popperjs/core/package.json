@@ -25,8 +25,7 @@
   "_requiredBy": [
     "/@material-ui/core",
     "/@mui/core",
-    "/@restart/ui",
-    "/react-datepicker"
+    "/@restart/ui"
   ],
   "_resolved": "https://registry.npmjs.org/@popperjs/core/-/core-2.10.2.tgz",
   "_spec": "2.10.2",
