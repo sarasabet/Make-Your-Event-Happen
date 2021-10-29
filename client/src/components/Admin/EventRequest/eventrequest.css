@@ -1,0 +1,26 @@
+.main-container {
+  height: 25vh;
+  background-color: white;
+  margin-bottom: 2em;
+  border: 1px solid red;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 1em;
+}
+
+/* event-txt {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+} */
+
+event-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
