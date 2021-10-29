@@ -22,12 +22,12 @@ function App() {
     <div className="App">
       <Router>
         
-        {/* <Navigation />
+        <Navigation />
         <HomePage/>
         <UpcomingEvents />
         <SelectBooking />
         <SignIn />
-        <SignUp /> */}
+        <SignUp />
         <Calender />
 
       </Router>
