@@ -70,6 +70,7 @@ img5 = EventImage.create!({
 
 ## Events
 
+
 puts "Re-creating Events ..."
 
 Event.destroy_all
@@ -79,8 +80,8 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img1.id,  
   description: 'this is good event',
-  start_date: '2021,10,29',
-  end_date:   '2021,10,29',
+  start_date: '2021-10-29',
+  end_date:   '2021-10-29',
   start_time: '09:00:00',
   end_time:   '11:00:00',
   is_active:   'true',
@@ -92,8 +93,8 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img2.id,  
   description: 'this is good event',
-  start_date: '2021,10,29',
-  end_date:   '2021,10,29',
+  start_date: '2021-10-29',
+  end_date:   '2021-10-29',
   start_time: '04:00:00',
   end_time:   '07:00:00',
   is_active:   'true',
@@ -105,8 +106,8 @@ Event.create!({
   event_type_id: type2.id,
   event_image_id: img3.id,  
   description: 'this is good event',
-  start_date: '2021,10,30',
-  end_date:   '2021,10,31',
+  start_date: '2021-10-30',
+  end_date:   '2021-10-31',
   start_time: '09:00:00',
   end_time:   '24:00:00',
   is_active:   'true',
@@ -118,8 +119,8 @@ Event.create!({
   event_type_id: type3.id,
   event_image_id: img4.id,  
   description: 'this is good event',
-  start_date: '2021,11,02',
-  end_date:   '2021,11,05',
+  start_date: '2021-11-02',
+  end_date:   '2021-11-05',
   start_time: '09:00:00',
   end_time:   '24:00:00',
   is_active:   'true',
@@ -131,8 +132,8 @@ Event.create!({
   event_type_id: type4.id,
   event_image_id: img5.id,  
   description: 'this is good event',
-  start_date: '2021,11,06',
-  end_date:   '2021,11,06',
+  start_date: '2021-11-06',
+  end_date:   '2021-11-06',
   start_time: '13:00:00',
   end_time:   '17:00:00',
   is_active:   'true',
@@ -144,8 +145,8 @@ Event.create!({
   event_type_id: type4.id,
   event_image_id: img5.id,  
   description: 'this is good event',
-  start_date: '2021,11,06',
-  end_date:   '2021,11,06',
+  start_date: '2021-11-06',
+  end_date:   '2021-11-06',
   start_time: '09:00:00',
   end_time:   '11:00:00',
   is_active:   'true',
