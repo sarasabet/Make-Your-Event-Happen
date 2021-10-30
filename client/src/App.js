@@ -20,16 +20,17 @@ import Calender from './components/Calaender'
 
 function App() {
 
+
   const [event, setEvent] = useState([]);
   useEffect(() => {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3000/api/events")
       .then(res => {
-
+       
         setEvent(prev => [...prev, res.data])
       })
   }, [])
-  console.log("events'", event)
+
 
 
   return (
@@ -42,7 +43,7 @@ function App() {
         <SelectBooking />
         <SignIn />
         <SignUp />
-        <Calender />
+        <Calender event= {event[0]}/>
 
       </Router>
 

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
-import getDay from "date-fns/getDay";
 import './Calender.css'
 
-const Calender = () => {
+
+const Calender = (props) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
+
 
   // define handler change function on check-in date
   const handleCheckInDate = (date) => {
@@ -16,18 +17,39 @@ const Calender = () => {
     setCheckOutDate(null);
   };
 
+  const event = props.event
+  const getAllDays = (data) => {
+
+    let bookedDays = []
+    for (let item in data) {
+      const date_s = new Date(data[item].start_date.toString().split('-').join(','))
+      const date_e = new Date(data[item].end_date.toString().split('-').join(','))
+
+      if (!(bookedDays.includes(date_s)) || !(bookedDays.includes(date_e))) {
+        bookedDays.push(date_s)
+        bookedDays.push(date_e)
+      }
+    }
+
+    return bookedDays
+  }
+
+  const handleBookaDay =() =>{
+ 
+    const start_Date = moment(checkInDate).format().slice(0,10)
+    const end_Date = moment(checkOutDate).format().slice(0,10)
+    console.log('here',start_Date, end_Date) 
+  }
+  handleBookaDay()
+
   // define handler change function on check-out date
   const handleCheckOutDate = (date) => {
     setCheckOutDate(date);
   };
 
-//getDay get a date Oct.27.2021 and give back a number 0 to 6 according to that date
-  const isWeekday = (date) => {
-    const day = getDay(date);
-    return day !== 0 && day !== 6;
-  };
-const bookedDays = [ new Date(),new Date(2021,9,30), new Date(2021,9,31), new Date(2021,10,3) ]
   
+  const allBookedDays = getAllDays(event)
+
   return (
     <div id='calender'>
       <h3> Please select a day </h3>
@@ -41,12 +63,12 @@ const bookedDays = [ new Date(),new Date(2021,9,30), new Date(2021,9,31), new Da
             onChange={handleCheckInDate}
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
-            excludeDates={bookedDays}
+            excludeDates={allBookedDays}
 
-              
+
           />
         </div>
-          <div>
+        <div>
           <label>End Day</label>
           <DatePicker
             selected={checkOutDate}
@@ -54,23 +76,23 @@ const bookedDays = [ new Date(),new Date(2021,9,30), new Date(2021,9,31), new Da
             onChange={handleCheckOutDate}
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
-            excludeDates={bookedDays}
-                         
+            excludeDates={allBookedDays}
+
           />
         </div>
       </div>
-      
 
-        {checkInDate && checkOutDate && (
-          <div className="summary">
-            <p>
-              You book an event from {moment(checkInDate).format("LL")} to{" "}
-              {moment(checkOutDate).format("LL")}.
-            </p>
-          </div>
-        )}
 
-      <button style={{margin:'2em'}} class="btn btn-outline-light btn-lg px-5" type="submit"> Submit </button>
+      {checkInDate && checkOutDate && (
+        <div className="summary">
+          <p>
+            You book an event from {moment(checkInDate).format("LL")} to{" "}
+            {moment(checkOutDate).format("LL")}.
+          </p>
+        </div>
+      )}
+
+      <button onSubmit={handleBookaDay} style={{ margin: '2em' }} class="btn btn-outline-light btn-lg px-5" type="submit"> Submit </button>
     </div>
 
 
