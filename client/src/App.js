@@ -24,10 +24,11 @@ function App() {
   const [event, setEvent] = useState([]);
   useEffect(() => {
     // for demo purposes, hardcoded URL
-    axios.get("http://localhost:3000/api/events")
+    axios.get("http://localhost:3001/api/events/2021-10-30")
       .then(res => {
        
         setEvent(prev => [...prev, res.data])
+        //setEvent(res.data)
       })
   }, [])
 
