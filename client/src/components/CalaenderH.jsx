@@ -5,19 +5,20 @@ import "react-datepicker/dist/react-datepicker.css";
 import './Calender.css'
 
 
-const Calender = (props) => {
+const CalaenderH = (props) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
-  const [checkOutDate, setCheckOutDate] = useState(null);
+
 
 
   // define handler change function on check-in date
   const handleCheckInDate = (date) => {
     setCheckInDate(date);
-    setCheckOutDate(null);
+
   };
 
   const event = props.event
+  // get all booeh date from db  start/end dates from db and disable them all 
   const getAllDays = (data) => {
 
     let bookedDays = []
@@ -25,7 +26,7 @@ const Calender = (props) => {
       const date_s = new Date(data[item].start_date.toString().split('-').join(','))
       const date_e = new Date(data[item].end_date.toString().split('-').join(','))
 
-      if (!(bookedDays.includes(date_s)) || !(bookedDays.includes(date_e))) {
+      if (!(bookedDays.includes(date_s)) ) {
         bookedDays.push(date_s)
         bookedDays.push(date_e)
       }
@@ -33,24 +34,17 @@ const Calender = (props) => {
 
     return bookedDays
   }
-
+// change the selected date format to a psql acceptable format 
   const handleBookaDay =() =>{
  
     const start_Date = moment(checkInDate).format().slice(0,10)
-    const end_Date = moment(checkOutDate).format().slice(0,10)
-    console.log('here',start_Date, end_Date) 
+
   }
   handleBookaDay()
 
-  // define handler change function on check-out date
-  const handleCheckOutDate = (date) => {
-    setCheckOutDate(date);
-  };
-  
-
   
   const allBookedDays = getAllDays(event)
-  console.log(allBookedDays)
+  // console.log(allBookedDays)
 
   return (
     <div id='calender'>
@@ -70,26 +64,14 @@ const Calender = (props) => {
 
           />
         </div>
-        <div>
-          <label>End Day</label>
-          <DatePicker
-            selected={checkOutDate}
-            minDate={checkInDate}
-            onChange={handleCheckOutDate}
-            dateFormat="MMMM, d, yyyy "
-            placeholderText="Seelect start date"
-            excludeDates={allBookedDays}
 
-          />
-        </div>
       </div>
 
 
-      {checkInDate && checkOutDate && (
+      {checkInDate && (
         <div className="summary">
           <p>
-            You book an event from {moment(checkInDate).format("LL")} to{" "}
-            {moment(checkOutDate).format("LL")}.
+            You book an event from {moment(checkInDate).format("LL")} to{" "} .
           </p>
         </div>
       )}
@@ -101,4 +83,4 @@ const Calender = (props) => {
   );
 };
 
-export default Calender;
+export default CalaenderH;

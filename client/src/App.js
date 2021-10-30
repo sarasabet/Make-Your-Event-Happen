@@ -6,6 +6,7 @@ import SignUp from './components/SignUp';
 import './App.css';
 import HomePage from './components/HomePage';
 import axios from 'axios'
+import CalaenderH from './components/CalaenderH'
 
 import React, { useEffect, useState } from "react";
 import {
@@ -24,7 +25,7 @@ function App() {
   const [event, setEvent] = useState([]);
   useEffect(() => {
     // for demo purposes, hardcoded URL
-    axios.get("http://localhost:3000/api/events")
+    axios.get("http://localhost:3001/api/events")
       .then(res => {
        
         setEvent(prev => [...prev, res.data])
@@ -44,6 +45,7 @@ function App() {
         <SignIn />
         <SignUp />
         <Calender event= {event[0]}/>
+        <CalaenderH event = {event[0]}/>
 
       </Router>
 
