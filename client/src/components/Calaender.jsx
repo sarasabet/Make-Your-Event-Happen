@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import getDay from "date-fns/getDay";
 import './Calender.css'
 
-const Calender = () => {
+const Calender = (props) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
@@ -26,6 +26,14 @@ const Calender = () => {
     const day = getDay(date);
     return day !== 0 && day !== 6;
   };
+
+const items = props.event;
+for(let item in items) {
+  console.log("calender:" , items[item])
+}
+
+
+
 const bookedDays = [ new Date(),new Date(2021,9,30), new Date(2021,9,31), new Date(2021,10,3) ]
   
   return (
