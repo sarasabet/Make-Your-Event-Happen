@@ -29,6 +29,7 @@ function App() {
       .then(res => {
        
         setEvent(prev => [...prev, res.data])
+        //setEvent(res.data)
       })
   }, [])
 

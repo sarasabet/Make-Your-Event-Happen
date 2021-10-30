@@ -4,7 +4,6 @@ import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import './Calender.css'
 
-
 const Calender = (props) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
