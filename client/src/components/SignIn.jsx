@@ -42,7 +42,8 @@ function SignIn() {
             </div>
 
             <div>
-              <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a></p>
+              <Link ></Link>
+              <p className="mb-0">Don't have an account?<Link to="/signup" className="text-white-50 fw-bold">Sign up </Link></p>
             </div>
 
           </div>
