@@ -23,6 +23,7 @@ function App() {
 
 
   const [event, setEvent] = useState([]);
+  const [show, setShow] = useState('')
   useEffect(() => {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3001/api/events")
@@ -33,20 +34,25 @@ function App() {
       })
   }, [])
 
+ const handleSelectBooking= (e) =>
+  {
+    console.log("select booking", e.target.value)
+    setShow(prev => prev = e.target.value) 
+  }
 
-
+  console.log("Show set", show)
   return (
     <div className="App">
       <Router>
-
         <Navigation />
         <HomePage />
         <UpcomingEvents />
-        <SelectBooking />
+        <SelectBooking onSelect={handleSelectBooking}/>
+        { show === 'hour' ?   <CalaenderH event = {event[0]}/> :   <Calender event= {event[0]}/>}
         <SignIn />
         <SignUp />
-        <Calender event= {event[0]}/>
-        <CalaenderH event = {event[0]}/>
+      
+      
 
       </Router>
 
