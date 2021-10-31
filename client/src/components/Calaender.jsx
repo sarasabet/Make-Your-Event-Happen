@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import './Calender.css'
+import { Link } from "react-router-dom";
 
 const Calender = (props) => {
   // define check-in and check-out state
@@ -33,11 +34,11 @@ const Calender = (props) => {
     return bookedDays
   }
 
-  const handleBookaDay =() =>{
- 
-    const start_Date = moment(checkInDate).format().slice(0,10)
-    const end_Date = moment(checkOutDate).format().slice(0,10)
-    console.log('here',start_Date, end_Date) 
+  const handleBookaDay = () => {
+
+    const start_Date = moment(checkInDate).format().slice(0, 10)
+    const end_Date = moment(checkOutDate).format().slice(0, 10)
+    console.log('here', start_Date, end_Date)
   }
   handleBookaDay()
 
@@ -45,9 +46,9 @@ const Calender = (props) => {
   const handleCheckOutDate = (date) => {
     setCheckOutDate(date);
   };
-  
 
-  
+
+
   const allBookedDays = getAllDays(event)
   console.log(allBookedDays)
 
@@ -92,8 +93,9 @@ const Calender = (props) => {
           </p>
         </div>
       )}
-
-      <button onSubmit={handleBookaDay} style={{ margin: '2em' }} class="btn btn-outline-light btn-lg px-5" type="submit"> Submit </button>
+      <Link to="signin">
+        <button className="btn btn-outline-light btn-lg px-5" onSubmit={handleBookaDay} style={{ margin: '2em' }} type="submit"> Submit </button>
+      </Link>
     </div>
 
 

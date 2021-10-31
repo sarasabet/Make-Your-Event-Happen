@@ -7,6 +7,8 @@ import './App.css';
 import HomePage from './components/HomePage';
 import axios from 'axios'
 import CalaenderH from './components/CalaenderH'
+import EventInfo from './components/EventInfo';
+import Footer from './components/Footer';
 
 import React, { useEffect, useState } from "react";
 import {
@@ -27,7 +29,7 @@ function App() {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3001/api/events")
       .then(res => {
-       
+
         setEvent(prev => [...prev, res.data])
         //setEvent(res.data)
       })
@@ -39,14 +41,31 @@ function App() {
     <div className="App">
       <Router>
 
+        {/* 
         <Navigation />
         <HomePage />
         <UpcomingEvents />
         <SelectBooking />
         <SignIn />
         <SignUp />
-        <Calender event= {event[0]}/>
-        <CalaenderH event = {event[0]}/>
+        <Calender event={event[0]} />
+        <CalaenderH event={event[0]} />
+        <EventInfo /> */}
+        <Navigation />
+        <Switch>
+
+          <Route path="/eventinfo" exact component={EventInfo} />
+          <Route path="/eventinfo" exact component={EventInfo} />
+          <Route path="/calender" exact component={Calender} />
+          <Route path="/signin" exact component={SignIn} />
+
+          <Route path="/">
+            <HomePage />
+            <UpcomingEvents />
+            <Footer/>
+          </Route>
+
+        </Switch>
 
       </Router>
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    resources :events, only: [ :index, :create ]
    get '/events/:start_date', to: "events#show"
     # resources :events, params: :start_date
+
+  resources :users, only: [ :index, :new, :create, :destroy ]
   end
 
 end
