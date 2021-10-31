@@ -1,8 +1,8 @@
 class Api::EventsController < ApplicationController
 
   def index
-    events = Event.all
-    render json: events
+    @events = Event.all
+    render json: @events
   end
 
   def show
@@ -14,9 +14,19 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    events = Event.new(event_params)
+    @events = Event.new(event_params)
 
-    # events.save
+    
+    if @events.save
+
+      EventMailer.with(event: @events).new_event_request_email.deliver_later
+
+      flash[:success] = "Your order has been successfully booked.Thank you for your business"
+      redirect_to root_path
+    else
+      flash.now[:error] = "Your order has been rejected ."
+      render :new
+    end
 
   end
 

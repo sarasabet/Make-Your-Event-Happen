@@ -1,12 +1,12 @@
 import * as ReactBootstrap from 'react-bootstrap';
-import './Navigation.css';
+import './Footer.css';
 import {Link} from 'react-router-dom';
 
 
-function Navigation() {
+function Footer() {
   return (
 
-    <ReactBootstrap.Navbar className='navbar hadow p-3 mb-5 bg-body rounded' fixed="top"  collapseOnSelect expand="lg"  variant="light">
+    <ReactBootstrap.Navbar  fixed="bottom" className='navbar hadow p-3 mb-5 rounded'  collapseOnSelect expand="lg" bg="dark" variant="dark">
       <ReactBootstrap.Container>
         <ReactBootstrap.Navbar.Brand style={{color:'red'}} className='brand' href="/">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
 
@@ -22,4 +22,4 @@ function Navigation() {
   )
 }
 
-export default Navigation;
+export default Footer;

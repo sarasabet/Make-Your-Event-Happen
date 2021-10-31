@@ -153,4 +153,31 @@ Event.create!({
   purpose:    'Personal',
 })
 
+User.create!({
+  id:1,
+  name:'user1',
+  email:'user@test.com',
+  password:'0000',
+  confirm_password:'0000',
+})
+
+User.create!({
+  id:2,
+  name:'user2',
+  email:'user2@test.com',
+  password:'0000',
+  confirm_password:'0000',
+})
+
+User.create!({
+  id:3,
+  name:'user3',
+  email:'user3@test.com',
+  password:'0000',
+  confirm_password:'0000',
+})
+
+
+
 puts "DONE!"
+

@@ -95,7 +95,7 @@ const CalaenderH = (props) => {
   // // console.log(allBookedDays)
   
   return (
-    <div className='calender'>
+    <div id='calender'>
       <h3> Please select a day </h3>
 
         <div>
