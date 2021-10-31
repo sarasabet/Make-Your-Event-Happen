@@ -9,6 +9,8 @@ import axios from 'axios'
 import CalaenderH from './components/CalaenderH'
 import EventInfo from './components/EventInfo';
 import Footer from './components/Footer';
+import SelectHourDay from './components/SelectHourDay';
+
 
 import React, { useEffect, useState } from "react";
 import {
@@ -19,12 +21,14 @@ import {
 } from "react-router-dom";
 
 import Calender from './components/Calaender'
+import SelectHour from './components/SelectHour';
 
 
 function App() {
 
 
   const [event, setEvent] = useState([]);
+  const [show, setShow] = useState('')
   useEffect(() => {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3001/api/events")
@@ -35,17 +39,22 @@ function App() {
       })
   }, [])
 
+  const handleSelectBooking = (e) => {
+    console.log("select booking", e.target.value)
+    setShow(prev => prev = e.target.value)
+  }
 
-
+  console.log("Show set", show)
   return (
     <div className="App">
       <Router>
-
-        {/* 
+{/* 
+        
         <Navigation />
         <HomePage />
         <UpcomingEvents />
-        <SelectBooking />
+        <SelectBooking onSelect={handleSelectBooking}/>
+        { show === 'hour' ?   <CalaenderH event = {event[0]}/> :   <Calender event= {event[0]}/>}
         <SignIn />
         <SignUp />
         <Calender event={event[0]} />
@@ -56,16 +65,19 @@ function App() {
 
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/eventinfo" exact component={EventInfo} />
-          <Route path="/calender" exact component={Calender} />
-          <Route path="/signin" exact component={SignIn} />
-
+          <Route path="/calender" exact component={SelectBooking} />
+          <Route path="/selecthours" exact component={CalaenderH}/>
+          <Route path="/selectdays" exact component={Calender}/>
+   
           <Route path="/">
             <HomePage />
             <UpcomingEvents />
-            <Footer/>
+            <Footer />
           </Route>
 
         </Switch>
+
+
 
       </Router>
 

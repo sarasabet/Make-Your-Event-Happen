@@ -1,0 +1,10 @@
+.book-container {
+  /* display: inline-block; */
+  margin: 5em;
+  padding: 2em;
+  height: 50vh;
+  /* width: 80vmax; */
+  background-color: black;
+  border-radius: 2em;
+  color: rgb(255, 255, 255);
+}
