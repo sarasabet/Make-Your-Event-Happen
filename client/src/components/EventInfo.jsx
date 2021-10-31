@@ -7,7 +7,9 @@ function EventInfo(props) {
       <Row>
         <Col s={8} md={8}>
         <div className="event-card">
-      <Form onSubmit={handleSubmit} id="event-info" autoComplete="off">
+      <Form 
+      // onSubmit={handleSubmit} id="event-info" autoComplete="off"
+      >
           <Form.Group controlId="eventName" >
             <Form.Label>Event Name</Form.Label>
             <Form.Control  placeholder="" />
