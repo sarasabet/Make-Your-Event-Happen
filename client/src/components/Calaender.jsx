@@ -93,9 +93,12 @@ const Calender = (props) => {
           </p>
         </div>
       )}
-      <Link to="signin">
-        <button className="btn btn-outline-light btn-lg px-5" onSubmit={handleBookaDay} style={{ margin: '2em' }} type="submit"> Submit </button>
-      </Link>
+        <div>
+       To process your event booking please Login/ Signup
+      </div>
+      <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>
+      <Link to='/signup' class="btn btn-outline-light btn-s px-4">Signup</Link>
+
     </div>
 
 

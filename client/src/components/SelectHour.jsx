@@ -62,7 +62,7 @@ function SelectHour(props) {
 
   return (
     <>
-    <div>
+    <div id='bookEventContainer'>
       { props.canBook ? 
         <div className="canbook" >
           <p className="pt-3"> You can book for {timeDisplay[props.start_time]} to {props.end_time} </p>

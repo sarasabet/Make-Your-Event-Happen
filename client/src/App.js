@@ -68,6 +68,8 @@ function App() {
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/selecthours" exact component={CalaenderH}/>
           <Route path="/selectdays" exact component={Calender}/>
+          <Route path="/signin" exact component={SignIn}/>
+          <Route path="/signup" exact component={SignUp}/>
    
           <Route path="/">
             <HomePage />

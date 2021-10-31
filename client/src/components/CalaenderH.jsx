@@ -6,6 +6,7 @@ import './Calender.css'
 import SelectHourDay from "./SelectHourDay";
 import axios from 'axios'
 import SelectHour from "./SelectHour";
+import { Link } from "react-router-dom";
 
 
 const CalaenderH = (props) => {
@@ -125,8 +126,14 @@ const CalaenderH = (props) => {
           </p>
         </div>
       )}
+      <br/><br/>
+      <div>
+       To process your event booking please Login/ Signup
+      </div>
+      <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>
+      <Link to='/signup' class="btn btn-outline-light btn-s px-4">Signup</Link>
 
-      <button onSubmit={handleBookaDay} style={{ margin: '2em' }} class="btn btn-outline-light btn-lg px-5" type="submit"> Submit </button>
+ 
     </div>
 
 
