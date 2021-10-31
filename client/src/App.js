@@ -47,7 +47,8 @@ function App() {
   console.log("Show set", show)
   return (
     <div className="App">
-      <Router>
+      <EventInfo />
+      {/* <Router> */}
 {/* 
         
         <Navigation />
@@ -60,7 +61,7 @@ function App() {
         <Calender event={event[0]} />
         <CalaenderH event={event[0]} />
         <EventInfo /> */}
-        <Navigation />
+        {/* <Navigation />
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
@@ -81,7 +82,7 @@ function App() {
 
 
 
-      </Router>
+      </Router> */}
 
     </div >
   );
