@@ -2,12 +2,12 @@ import {Button, Form, Container, Row, Col, Card, Accordion} from 'react-bootstra
 import './eventinfo.css' 
 function EventInfo(props) {
   return (
-        <div className="bg-container">
-          <Container>
-          <Row>
-            <Col s={8} md={8}>
-            <div className="event-card">
-            <Form >
+    <div className="bg-container">
+      <Container>
+      <Row>
+        <Col s={8} md={8}>
+        <div className="event-card">
+      <Form onSubmit={handleSubmit} id="event-info" autoComplete="off">
           <Form.Group controlId="eventName" >
             <Form.Label>Event Name</Form.Label>
             <Form.Control  placeholder="" />
