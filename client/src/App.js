@@ -46,7 +46,6 @@ function App() {
     setShow(prev => prev = e.target.value)
   }
 
-  console.log("Show set", show)
   return (
     <div className="App">
       <Router>
@@ -66,12 +65,15 @@ function App() {
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
-          <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
-          <Route path="/selecthours" exact component={CalaenderH}/>
-          <Route path="/selectdays" exact component={Calender}/>
           <Route path="/signin" exact component={SignIn}/>
           <Route path="/signup" exact component={SignUp}/>
+          <Route path="/selectdays">
+            <Calender  event={event[0]}/>
+          </Route>
+          <Route path="/selecthours">
+            <CalaenderH  event={event[0]}/>
+          </Route>
   
           <Route path="/aboutus">
             <Aboutus />
@@ -80,7 +82,7 @@ function App() {
    
           <Route path="/">
             <HomePage />
-            <UpcomingEvents />
+            <UpcomingEvents event={event[0]}/>
             <Footer />
           </Route>
 

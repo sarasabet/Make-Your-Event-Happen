@@ -4,7 +4,8 @@ class EventMailer < ActionMailer::Base
 
   def new_event_request_email
     @event = params[ :event]
-    mail(to: "sara.ilbeigi@gmial.com", subject: "You got a new event request!")
+    # to should be replace with @event.user.email
+    mail(to: "makeyoureventhappen123@gmail.com", subject: "You got a new event request!")
 
   end
 

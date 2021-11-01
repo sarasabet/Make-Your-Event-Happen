@@ -176,7 +176,26 @@ User.create!({
   password:'0000',
   confirm_password:'0000',
 })
+EventBooking.create!({
+  id:1,
+  user_id:1,
+  event_id:1,
+  confirmation:'true',
+})
 
+EventBooking.create!({
+  id:2,
+  user_id:2,
+  event_id:2,
+  confirmation:'true',
+})
+
+EventBooking.create!({
+  id:3,
+  user_id:3,
+  event_id:3,
+  confirmation:'true',
+})
 
 
 puts "DONE!"

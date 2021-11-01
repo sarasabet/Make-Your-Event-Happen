@@ -4,7 +4,7 @@ import EventCard from './EventCard'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function UpcomingEvents() {
+function UpcomingEvents(props) {
   const [events, setEvents] = useState([])
   useEffect(() => {
     // for demo purposes, hardcoded URL
@@ -17,8 +17,7 @@ function UpcomingEvents() {
     ]  
       setEvents(data)
   }, [])
-  
-  
+
   return(
     <div>
     <div className='bg-container'> </div>
