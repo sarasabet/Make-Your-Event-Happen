@@ -18,7 +18,7 @@ const CalaenderH = (props) => {
   // define handler change function on check-in date
   const minTime = 2
   useEffect(() => {
-    const url = `http://localhost:3001/api/events/${moment(checkInDate).format().slice(0,10)}`
+    const url = `api/events/${moment(checkInDate).format().slice(0,10)}`
     console.log("url....", url)
     axios.get(url)
       .then(res => {     
