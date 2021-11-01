@@ -136,7 +136,7 @@ Event.create!({
   end_date:   '2021-11-06',
   start_time: '13:00:00',
   end_time:   '17:00:00',
-  is_active:   'true',
+  is_active:   'false',
   purpose:    'Personal',
 })
 

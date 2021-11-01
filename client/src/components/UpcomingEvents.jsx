@@ -7,7 +7,15 @@ import axios from 'axios'
 function UpcomingEvents(props) {
   const [events, setEvents] = useState([])
   useEffect(() => {
-    // for demo purposes, hardcoded URL
+    const is_active = true
+    const url = `http://localhost:3001/api/events/${is_active}`
+    // console.log("url....", url)
+    axios.get(url)
+      .then(res => {    
+        console.log("data.....", res.data) 
+        // const data = res.data
+      })
+
     const data = [
       {id: 1, name: 'Waffle', img: 'https://media.istockphoto.com/photos/table-setting-for-an-event-party-or-wedding-reception-picture-id479977238?s=612x612'},
       {id: 2,name: 'Doug', img: 'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'},
@@ -17,14 +25,22 @@ function UpcomingEvents(props) {
     ]  
       setEvents(data)
   }, [])
+<<<<<<< HEAD
 
+=======
+  
+  const selectedImage = (e) => {
+    console.log("Event id", e.target)
+  }
+  
+>>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
   return(
     <div>
     <div className='bg-container'> </div>
       <h1 className="mt-2 text-start ms-5">Upcoming Events</h1>
       <div className = "card-container">
         {        
-           events.map(event => <EventCard key={event.id} name={event.name} image={event.img}/>)
+           events.map(event => <EventCard key={event.id} event ={event}  onClick={selectedImage}/>)
         }
       </div>
     </div>

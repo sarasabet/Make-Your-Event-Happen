@@ -10,8 +10,12 @@ import CalaenderH from './components/CalaenderH'
 import EventInfo from './components/EventInfo';
 import Footer from './components/Footer';
 import SelectHourDay from './components/SelectHourDay';
+<<<<<<< HEAD
 import Aboutus from './components/AboutUs';
 
+=======
+import ShowOneEvent from './components/ShowOneEvent';
+>>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
 
 
 import React, { useEffect, useState } from "react";
@@ -48,26 +52,39 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <Router>
 {/* 
         
         <Navigation />
+=======
+      {/* <EventInfo /> */}
+      <Router>  
+        <ShowOneEvent />
+        {/* <Navigation />
+>>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
         <HomePage />
-        <UpcomingEvents />
-        <SelectBooking onSelect={handleSelectBooking}/>
+        <UpcomingEvents /> */}
+        {/* <SelectBooking onSelect={handleSelectBooking}/>
         { show === 'hour' ?   <CalaenderH event = {event[0]}/> :   <Calender event= {event[0]}/>}
         <SignIn />
         <SignUp />
         <Calender event={event[0]} />
         <CalaenderH event={event[0]} />
+<<<<<<< HEAD
         <EventInfo /> */}
         <Navigation />
+=======
+        <EventInfo />  */}
+  
+>>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/signin" exact component={SignIn}/>
           <Route path="/signup" exact component={SignUp}/>
+<<<<<<< HEAD
           <Route path="/selectdays">
             <Calender  event={event[0]}/>
           </Route>
@@ -79,6 +96,9 @@ function App() {
             <Aboutus />
             <Footer />
           </Route>
+=======
+          <Route path="/showoneevent" exact component={ShowOneEvent}/>
+>>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
    
           <Route path="/">
             <HomePage />
