@@ -4,7 +4,7 @@ import EventCard from './EventCard'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function UpcomingEvents(props) {
+function UpcomingEvents() {
   const [events, setEvents] = useState([])
   useEffect(() => {
     const is_active = true
@@ -25,15 +25,11 @@ function UpcomingEvents(props) {
     ]  
       setEvents(data)
   }, [])
-<<<<<<< HEAD
-
-=======
   
   const selectedImage = (e) => {
     console.log("Event id", e.target)
   }
   
->>>>>>> 80a77f4599d9977e0c272f1b8cef2d3f3971afd0
   return(
     <div>
     <div className='bg-container'> </div>
