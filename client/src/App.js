@@ -49,34 +49,35 @@ function App() {
   console.log("Show set", show)
   return (
     <div className="App">
-      <Router>  
-        
+      <Router>
+
         <Navigation />
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
-          <Route path="/signin" exact component={SignIn}/>
-          <Route path="/signup" exact component={SignUp}/>
-          <Route path="/showoneevent/:id" exact component={ShowOneEvent}/>
-          <Route path="/aboutus" exact component={AboutUs}/>
+          <Route path="/signin" exact component={SignIn} />
+          <Route path="/signup" exact component={SignUp} />
+          {/* <Route path="/showoneevent/:id" exact component={ShowOneEvent}/> */}
+          <Route path="/aboutus" exact component={AboutUs} />
+          <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
+    
+          <Route path="/selectdays">
+            <Calender event={event[0]} />
+          </Route>
+          <Route path="/selecthours">
+            <CalaenderH event={event[0]} />
+          </Route>
 
-           <Route path="/selectdays">
-           <Calender event={event[0]} />
-           </Route> 
-           <Route path="/selecthours">
-           <CalaenderH event={event[0]} />
-           </Route> 
-   
           <Route path="/">
             <HomePage />
-            <UpcomingEvents events={event[0]}/>
+            <UpcomingEvents events={event[0]} />
           </Route>
 
 
-          </Switch>
+        </Switch>
 
-          <Footer />
+        <Footer />
 
       </Router>
 

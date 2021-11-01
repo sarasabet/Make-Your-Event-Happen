@@ -1,0 +1,9 @@
+img {
+  width: 100px; 
+  min-height: 50%;
+  float: left;
+  margin: 10px;
+}
+.card-singleEvent{
+  display: inline-block;
+}
