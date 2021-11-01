@@ -1,0 +1,18 @@
+.parent-container {
+  display:flex;
+  height: 60vh;
+  background-color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    to right bottom,
+    hsl(0, 0%, 100%) 65%,
+    #ffad81 120%
+    
+  );
+
+  margin-top:12em;
+  justify-content: center;
+
+}
+.container-main{
+  max-width: 35ch;
+}

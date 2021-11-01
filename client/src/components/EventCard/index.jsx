@@ -3,12 +3,11 @@ import {Link} from 'react-router-dom'
 import ShowOneEvent from '../ShowOneEvent'
 
 function EventCard(props) {
-
-  const handleClick = (e) => {
-   
-    props.onClick(e)
+  const handleClick =(e) => {
+    console.log(e.target)
   }
   return (
+
 
     <div className="card">   
   

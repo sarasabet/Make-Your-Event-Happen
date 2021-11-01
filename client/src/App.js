@@ -78,8 +78,8 @@ function App() {
             <UpcomingEvents />
             <Footer />
           </Route>
-
-        </Switch>
+       
+          </Switch>
 
 
 
