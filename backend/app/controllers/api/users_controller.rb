@@ -9,10 +9,7 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    # user = User.find_by_email(params[:email])
 
-    # user[:user_id] = user.id
-    # redirect_to '/'
    
   end
 

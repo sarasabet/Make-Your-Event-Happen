@@ -1,14 +1,11 @@
 import './HomePage.css'
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 function HomePage() {
   return (
-    <Router>
+
 
       <div class="parent-container d-flex">
         <div class="container-left">
@@ -29,14 +26,13 @@ function HomePage() {
             </div>
             <div class='container-right-linksd' >
 
-              <Link md  className='bookevent-btn md fluid' to="/bookevent">Book Event</Link>
+              <Link md  className='bookevent-btn md fluid' to="/calender">Book Event</Link>
               <Link md  className='learnMore-btn md' to="/aboutus">Learn More</Link>
             </div>
           </div>
         </div>
       </div>
 
-    </Router >
   )
 }
 

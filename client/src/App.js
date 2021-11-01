@@ -10,6 +10,8 @@ import CalaenderH from './components/CalaenderH'
 import EventInfo from './components/EventInfo';
 import Footer from './components/Footer';
 import SelectHourDay from './components/SelectHourDay';
+import Aboutus from './components/AboutUs';
+
 
 
 import React, { useEffect, useState } from "react";
@@ -70,6 +72,11 @@ function App() {
           <Route path="/selectdays" exact component={Calender}/>
           <Route path="/signin" exact component={SignIn}/>
           <Route path="/signup" exact component={SignUp}/>
+  
+          <Route path="/aboutus">
+            <Aboutus />
+            <Footer />
+          </Route>
    
           <Route path="/">
             <HomePage />

@@ -66,6 +66,7 @@ const Calender = (props) => {
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
             excludeDates={allBookedDays}
+            isClearable
 
 
           />
@@ -79,7 +80,7 @@ const Calender = (props) => {
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
             excludeDates={allBookedDays}
-
+            isClearable
           />
         </div>
       </div>
