@@ -50,10 +50,10 @@ function App() {
     <div className="App">
       {/* <EventInfo /> */}
       <Router>  
-        <ShowOneEvent />
-        {/* <Navigation />
+        
+        <Navigation />
         <HomePage />
-        <UpcomingEvents /> */}
+        <UpcomingEvents />
         {/* <SelectBooking onSelect={handleSelectBooking}/>
         { show === 'hour' ?   <CalaenderH event = {event[0]}/> :   <Calender event= {event[0]}/>}
         <SignIn />
@@ -71,7 +71,7 @@ function App() {
           <Route path="/selectdays" exact component={Calender}/>
           <Route path="/signin" exact component={SignIn}/>
           <Route path="/signup" exact component={SignUp}/>
-          <Route path="/showoneevent" exact component={ShowOneEvent}/>
+          <Route path="/showoneevent/:id" exact component={ShowOneEvent}/>
    
           <Route path="/">
             <HomePage />

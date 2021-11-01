@@ -36,15 +36,8 @@ function EventInfo(props) {
     console.log("data", state)
     axios({
       method: 'POST',
-      mode: 'cors',
-      url: "http://localhost:3001/api/events",
-      // cache: 'no-cache',
-      // credentials: 'same-origin' ,
-      // headers: {
-      //     'content-type': 'application/json'
-      // },
-      // body: JSON.stringify(state),
-       data:  state 
+      url: "/api/events",
+      data:  state 
     })
     // axios.put('http://localhost:3001/api/events', { state })
     .then(resp => {
@@ -52,18 +45,6 @@ function EventInfo(props) {
     })
 
   }
-    
- 
-   
-  // async handleSubmit() {
-  //   // const data = new FormData(formData)
-  //   await fetch("http://localhost:3001/events", {
-  //     method: "POST",
-  //     mode: "cors",
-  //     body: data
-  //   }).then(response => response.json())
-  //   .then(response => console.log(response))
-  // }
 
   function handleOnNameChange(e) {
     setState({ ...state, name: e.target.value})
