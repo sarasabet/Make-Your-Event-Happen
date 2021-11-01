@@ -9,8 +9,8 @@ class Api::EventsController < ApplicationController
       # event = Event.find params[:id]
  
     puts params
-    #event = Event.where("start_date = ?", params[:start_date])
-     event = Event.where("is_active = ?", params[:is_active])
+    event = Event.where("start_date = ?", params[:start_date])
+    #  event = Event.where("is_active = ?", params[:is_active])
     render json: event
   end
 
@@ -19,9 +19,9 @@ class Api::EventsController < ApplicationController
     p 'hellooooooooo' 
     
     if @events.save
-        render json: {status: "SUCCESS", message: "added a new user!", data: user}, status: :ok
+        render json: {status: "SUCCESS", message: "added a new user!", data: @events}, status: :ok
       else
-        render json: {status: "ERROR", message: "couldn't add a user", data: user.errors}, status: :unprocessable_entity
+        render json: {status: "ERROR", message: "couldn't add a user", data: @events.errors}, status: :unprocessable_entity
       end
 
     #   EventMailer.with(event: @events).new_event_request_email

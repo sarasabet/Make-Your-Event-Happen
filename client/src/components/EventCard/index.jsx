@@ -7,8 +7,13 @@ function EventCard(props) {
     console.log(e.target)
   }
   return (
-    <div className="card">     
-      <img className="card--img" src = {props.image}  onClick={handleClick}/>
+
+
+    <div className="card">   
+  
+    <Link to = {`/ShowOneEvent/${props.event.id}`}>  
+      <img className="card--img" src = {props.event.img} />
+     </Link> 
       <div className="card-text">
         {props.event.name} 
         <p>On 31st October 2021
