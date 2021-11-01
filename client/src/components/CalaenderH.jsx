@@ -132,11 +132,8 @@ const CalaenderH = (props) => {
       </div>
       <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>
       <Link to='/signup' class="btn btn-outline-light btn-s px-4">Signup</Link>
-
  
     </div>
-
-
   );
 };
 

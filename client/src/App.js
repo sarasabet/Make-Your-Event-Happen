@@ -10,6 +10,7 @@ import CalaenderH from './components/CalaenderH'
 import EventInfo from './components/EventInfo';
 import Footer from './components/Footer';
 import SelectHourDay from './components/SelectHourDay';
+import ShowOneEvent from './components/ShowOneEvent';
 
 
 import React, { useEffect, useState } from "react";
@@ -47,21 +48,20 @@ function App() {
   console.log("Show set", show)
   return (
     <div className="App">
-      <EventInfo />
-      {/* <Router> */}
-{/* 
-        
-        <Navigation />
+      {/* <EventInfo /> */}
+      <Router>  
+        <ShowOneEvent />
+        {/* <Navigation />
         <HomePage />
-        <UpcomingEvents />
-        <SelectBooking onSelect={handleSelectBooking}/>
+        <UpcomingEvents /> */}
+        {/* <SelectBooking onSelect={handleSelectBooking}/>
         { show === 'hour' ?   <CalaenderH event = {event[0]}/> :   <Calender event= {event[0]}/>}
         <SignIn />
         <SignUp />
         <Calender event={event[0]} />
         <CalaenderH event={event[0]} />
-        <EventInfo /> */}
-        {/* <Navigation />
+        <EventInfo />  */}
+  
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
@@ -71,6 +71,7 @@ function App() {
           <Route path="/selectdays" exact component={Calender}/>
           <Route path="/signin" exact component={SignIn}/>
           <Route path="/signup" exact component={SignUp}/>
+          <Route path="/showoneevent" exact component={ShowOneEvent}/>
    
           <Route path="/">
             <HomePage />
@@ -82,7 +83,7 @@ function App() {
 
 
 
-      </Router> */}
+      </Router>
 
     </div >
   );

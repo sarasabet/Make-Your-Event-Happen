@@ -1,35 +1,70 @@
 import {Button, Form, Container, Row, Col, Card, Accordion} from 'react-bootstrap'
 import './eventinfo.css' 
 import {useState, useEffect} from 'react'
+import axios from 'axios'
 function EventInfo(props) {
   
   const [state, setState] = useState({
-    name: "",
+    event_type_id: 0,
     description: "",
-    image: "",
+    event_image_id: 1,
     invitees: 0,
     purpose: "",
-    terms: false
+    terms: false,
+    start_date: '2021-11-04',
+    end_date:   '2021-11-04',
+    start_time: '09:00:00',
+    end_time:   '11:00:00',
+    is_active:   'true',
   });
 
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
+//     e.preventDefault()
+//     fetch(`http://localhost:3001/api/events`)
+//     .then(resp => resp.json())
+//     .then(data => {
+//         // handling errors if any.
+//         if (data.error){
+//             this.setState({ error: data.error })
+//         } else {
+//             this.setState({ recipes: data })
+//         }
+//     })
+
+// }
     e.preventDefault()
-    // console.log(e.currentTarget)
-    const data = new FormData(e.currentTarget)
-    console.log(state)
-    // formSubmit(e.target)
+    console.log("data", state)
+    axios({
+      method: 'POST',
+      mode: 'cors',
+      url: "http://localhost:3001/api/events",
+      // cache: 'no-cache',
+      // credentials: 'same-origin' ,
+      // headers: {
+      //     'content-type': 'application/json'
+      // },
+      // body: JSON.stringify(state),
+       data:  state 
+    })
+    // axios.put('http://localhost:3001/api/events', { state })
+    .then(resp => {
+      console.log("response: ", resp)
+    })
+
   }
-        
-  //   }
-  // function formSubmit(formData) {
-  //   const data = new FormData(formData)
-  //   await fetch("http://localhost:3001/event_info", {
+    
+ 
+   
+  // async handleSubmit() {
+  //   // const data = new FormData(formData)
+  //   await fetch("http://localhost:3001/events", {
   //     method: "POST",
   //     mode: "cors",
   //     body: data
   //   }).then(response => response.json())
-  //   .then(response => props.updateEventInfo(response))
+  //   .then(response => console.log(response))
   // }
+
   function handleOnNameChange(e) {
     setState({ ...state, name: e.target.value})
     console.log(e.target.value)
@@ -63,10 +98,10 @@ function EventInfo(props) {
             <Form.Label>Event Name</Form.Label>
             <Form.Control as='select' onChange={handleOnNameChange}>
               <option value=''>Select Event Type</option>
-              <option value='Dance'>Dance</option>
-              <option value='Cooking'>Cooking</option>
-              <option value='Painting'>Painting</option>
-              <option value='Music'>Music</option>            
+              <option value='1'>Dance</option>
+              <option value='2'>Cooking</option>
+              <option value='3'>Painting</option>
+              <option value='4'>Music</option>            
             </Form.Control>
             <Form.Text className="text-muted"  >
               Please enter the name best describe your event 
