@@ -12,7 +12,7 @@ function EventCard(props) {
     <div className="card">   
   
     <Link to = {`/ShowOneEvent/${props.event.id}`}>  
-      <img className="card--img" src = {props.event.img} />
+      <img className="card--img" src = {props.event.image} />
      </Link> 
       <div className="card-text">
         {props.event.name} 

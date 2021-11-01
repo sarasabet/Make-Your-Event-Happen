@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_155015) do
+ActiveRecord::Schema.define(version: 2021_11_01_203123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,17 @@ ActiveRecord::Schema.define(version: 2021_10_29_155015) do
     t.boolean "is_active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "image"
     t.index ["event_image_id"], name: "index_events_on_event_image_id"
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
     t.index ["start_date"], name: "index_events_on_start_date"
     t.index ["start_time"], name: "index_events_on_start_time"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.text "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "payments", force: :cascade do |t|

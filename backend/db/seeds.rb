@@ -80,12 +80,13 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img1.id,  
   description: 'this is good event',
-  start_date: '2021-10-01',
-  end_date:   '2021-10-31',
+  start_date: '2021-11-01',
+  end_date:   '2021-11-01',
   start_time: '09:00:00',
   end_time:   '11:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://media.istockphoto.com/photos/table-setting-for-an-event-party-or-wedding-reception-picture-id479977238?s=612x612'
 })
 
 Event.create!({
@@ -93,12 +94,13 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img2.id,  
   description: 'this is good event',
-  start_date: '2021-10-01',
-  end_date:   '2021-10-31',
+  start_date: '2021-11-01',
+  end_date:   '2021-11-01',
   start_time: '16:00:00',
   end_time:   '19:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
 })
 
 Event.create!({
@@ -112,6 +114,7 @@ Event.create!({
   end_time:   '24:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://images.unsplash.com/photo-1549451371-64aa98a6f660?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
 })
 
 Event.create!({
@@ -125,6 +128,7 @@ Event.create!({
   end_time:   '24:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'
 })
 
 Event.create!({
@@ -138,6 +142,7 @@ Event.create!({
   end_time:   '17:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'
 })
 
 Event.create!({
@@ -151,6 +156,7 @@ Event.create!({
   end_time:   '22:00:00',
   is_active:   'true',
   purpose:    'Personal',
+  image: 'https://media.istockphoto.com/photos/table-setting-for-an-event-party-or-wedding-reception-picture-id479977238?s=612x612'
 })
 
 User.create!({
@@ -176,26 +182,7 @@ User.create!({
   password:'0000',
   confirm_password:'0000',
 })
-EventBooking.create!({
-  id:1,
-  user_id:1,
-  event_id:1,
-  confirmation:'true',
-})
 
-EventBooking.create!({
-  id:2,
-  user_id:2,
-  event_id:2,
-  confirmation:'true',
-})
-
-EventBooking.create!({
-  id:3,
-  user_id:3,
-  event_id:3,
-  confirmation:'true',
-})
 
 
 puts "DONE!"

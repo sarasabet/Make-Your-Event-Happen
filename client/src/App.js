@@ -70,7 +70,7 @@ function App() {
    
           <Route path="/">
             <HomePage />
-            <UpcomingEvents />
+            <UpcomingEvents events={event[0]}/>
           </Route>
 
 
