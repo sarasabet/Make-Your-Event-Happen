@@ -80,7 +80,7 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img1.id,  
   description: 'this is good event',
-  start_date: '2021-10-31',
+  start_date: '2021-10-01',
   end_date:   '2021-10-31',
   start_time: '09:00:00',
   end_time:   '11:00:00',
@@ -93,7 +93,7 @@ Event.create!({
   event_type_id: type1.id,
   event_image_id: img2.id,  
   description: 'this is good event',
-  start_date: '2021-10-31',
+  start_date: '2021-10-01',
   end_date:   '2021-10-31',
   start_time: '16:00:00',
   end_time:   '19:00:00',
@@ -136,7 +136,7 @@ Event.create!({
   end_date:   '2021-11-06',
   start_time: '13:00:00',
   end_time:   '17:00:00',
-  is_active:   'false',
+  is_active:   'true',
   purpose:    'Personal',
 })
 
