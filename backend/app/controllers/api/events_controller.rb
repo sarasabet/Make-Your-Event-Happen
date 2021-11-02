@@ -23,14 +23,14 @@ class Api::EventsController < ApplicationController
 
 
       # EventMailer.with(event: @events).new_event.deliver
-      EventMailer.new_event.deliver_now
+  #     EventMailer.new_event.deliver_now
 
-      flash[:success] = "Your order has been successfully booked.Thank you for your business"
-      redirect_to root_path
-    else
-      flash.now[:error] = "Your order has been rejected ."
-      render :new
-    end
+  #     flash[:success] = "Your order has been successfully booked.Thank you for your business"
+  #     redirect_to root_path
+  #   else
+  #     flash.now[:error] = "Your order has been rejected ."
+  #     render :new
+  #   end
 
   end
 

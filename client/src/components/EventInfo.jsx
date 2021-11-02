@@ -93,7 +93,7 @@ function EventInfo(props) {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Link to='/payment'className="mt-5"  > Submit Review</Link>
+          <Link to='/eventsummary'className="mt-5"  > Submit Review</Link>
           {/* <Button className="mt-5" type='submit'>Submit Review</Button> */}
         </Form>
         </div>

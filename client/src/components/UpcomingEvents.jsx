@@ -37,7 +37,7 @@ function UpcomingEvents(props) {
   
   return(
     <div>
-    <div className='bg-container'> </div>
+    {/* <div className='bg-container'> </div> */}
       <h1 className="mt-2 text-start ms-5">Upcoming Events</h1>
       <div className = "card-container">
         {        

@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import ShowOneEvent from './components/ShowOneEvent';
 import AboutUs from './components/AboutUs'
 import Payment from './components/Payment'
+import EventSummary from './components/EventSummary';
 
 
 import React, { useEffect, useState } from "react";
@@ -54,13 +55,13 @@ function App() {
         <Navigation />
 
         <Switch>
-
+        <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/signin" exact component={SignIn} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/aboutus" exact component={AboutUs} />
-          <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
+          <Route path="/eventsummary" exact component={EventSummary}/>
           <Route path="/payment" exact component={Payment}/>
     
           <Route path="/selectdays">
@@ -72,7 +73,6 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Payment />
             <HomePage />
             <UpcomingEvents events={event[0]} />
             <SelectBooking />
@@ -84,6 +84,7 @@ function App() {
         <Footer />
 
       </Router>
+ 
 
     </div >
   );
