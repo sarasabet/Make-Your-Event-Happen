@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'makeyoureventhappen123@gmail.com'
+  default from: 'makeyoureventhappen@gmail.com'
   layout 'mailer'
 end
+
