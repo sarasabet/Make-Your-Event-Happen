@@ -48,10 +48,11 @@ function App() {
 
   console.log("Show set", show)
   return (
-    <div className="App">
+    <div className="App container">
       <Router>
 
         <Navigation />
+
         <Switch>
 
           <Route path="/eventinfo" exact component={EventInfo} />
@@ -71,8 +72,10 @@ function App() {
           </Route>
 
           <Route path="/">
+            <Payment />
             <HomePage />
             <UpcomingEvents events={event[0]} />
+            <SelectBooking />
           </Route>
 
 

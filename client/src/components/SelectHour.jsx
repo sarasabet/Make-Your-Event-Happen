@@ -1,37 +1,15 @@
 import { useEffect, useState } from 'react'
 import './selecthour.css'
 import { Dropdown} from 'react-bootstrap'
+import useApplicationData from "../hooks/useApplicationData";
 
 function SelectHour(props) {
   const minTime = props.minTime;
   let time = '9'
-  const [value,setValue]=useState(time);
-  const [endvalue,setEndvalue]=useState('');
-
-
+  // const [value,setValue]=useState(time);
+  // const [endvalue,setEndvalue]=useState('');
+  const { state, startHandleSelect, endHandleSelect } = useApplicationData()
   const timeDisplay = {9:'9 AM', 10: '10 AM' , 11: '11 AM', 12: '12 AM', 13: '1 PM', 14: '2 PM', 15: '3 PM', 16: '4 PM', 17: '5 PM', 18: '6 PM', 19: '7 PM', 20: '8 PM', 21: '9 PM', 22: '10 PM', 23: '11 PM', 24: '12 PM' }
- 
-  function checkTime(e) {
-    let time_part = Number(e.substr(0,2))
-    const format_part = e.slice(-2)
-    if (format_part === 'PM')
-    {
-      time_part += 12
-    } 
-    return time_part
-  }
-
-  function startHandleSelect(e) {
-
-    e = checkTime(e)
-    setValue(prev =>  e);
-  }
-
-  const endHandleSelect=(e)=>{
-    e = checkTime(e)
-    setEndvalue(prev => e )
-  }
- 
   let booking_slot;  
  
   function createStartItems() { 
@@ -46,7 +24,8 @@ function SelectHour(props) {
 
   function createEndItems() { 
     let end_time = props.end_time 
-    let booking_slot =  Number(value) + minTime
+    console.log("tsrat TIme", state.start_time)
+    let booking_slot =  Number(state.start_time) + minTime
     let items = [];       
       while (end_time >= booking_slot) {
         items.push(timeDisplay[booking_slot])
@@ -95,7 +74,7 @@ function SelectHour(props) {
       }    
 
       </div>
-      end time {endvalue}
+      end time {state.end_time}
     </>
   )
 

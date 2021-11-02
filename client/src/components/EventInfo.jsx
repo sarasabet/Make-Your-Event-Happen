@@ -4,57 +4,26 @@ import './eventinfo.css'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import useApplicationData from "../hooks/useApplicationData";
 function EventInfo(props) {
-  
-  const [state, setState] = useState({
-    
-    description: "",
-    event_type_id: 1,
-    invitees: 0,
-    purpose: "",
-    terms: false,
-    start_date: '2021-11-04',
-    end_date:   '2021-11-04',
-    start_time: '09:00:00',
-    end_time:   '11:00:00',
-    is_active:   'true',
-  });
+  const { state, handleOnNameChange,handleOnDescChange,handleOnPurposeChange,handleOnInviteesChange,handleOnTermChange } = useApplicationData()
+  console.log("STate:", state)
 
-   const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     console.log("data", state)
     axios({
       method: 'POST',
       url: "/api/events",
-      data:  state 
+      data:  state
     })
-    // axios.put('http://localhost:3001/api/events', { state })
     .then(resp => {
       console.log("response: ", resp)
     })
 
   }
 
-  function handleOnNameChange(e) {
-    setState({ ...state, event_type_id: e.target.value})
-    console.log(e.target.value)
-  }
-  function handleOnDescChange(e) {
-    setState({ ...state, description: e.target.value})
-    console.log(e.target.value)
-  }
-  function handleOnPurposeChange(e) {
-    setState({ ...state, purpose: e.target.value})
-    console.log(e.target.value)
-  }
-  function handleOnInviteesChange(e) {
-    setState({ ...state, invitees: e.target.value})
-    console.log(e.target.value)
-  }
-  function handleOnTermChange(e) {
-    setState({ ...state, terms: e.target.value})
-    console.log(e.target.value)
-  }
+
 
   return (
     <div className="bg-container">
@@ -66,7 +35,7 @@ function EventInfo(props) {
       <Form id="event-info" autoComplete="off" onSubmit={handleSubmit}>
           <Form.Group controlId="eventName" >
             <Form.Label>Event Name</Form.Label>
-            <Form.Control as='select' onChange={handleOnNameChange}>
+            <Form.Control as='select' name="eventName" onChange={handleOnNameChange}>
               <option value=''>Select Event Type</option>
               <option value='1'>Dance</option>
               <option value='2'>Cooking</option>
@@ -80,7 +49,7 @@ function EventInfo(props) {
 
           <Form.Group controlId="eventDescription" >
             <Form.Label>Event Description</Form.Label>
-            <Form.Control as='textarea' name="name" type="text" onChange={handleOnDescChange} value={state.description} />
+            <Form.Control as='textarea' name="eventDescription" type="text" onChange={handleOnDescChange} value={state.description} />
             <Form.Text className="text-muted" >
               Please enter the description of your event
             </Form.Text>
@@ -88,7 +57,7 @@ function EventInfo(props) {
 
           <Form.Group controlId="eventImage" >
             <Form.Label>Event Image</Form.Label>
-            <Form.Control  type="file" />
+            <Form.Control name="eventImage"  type="file" />
             <Form.Text className="text-muted">
               Please select the image for your event 
             </Form.Text>
@@ -96,12 +65,12 @@ function EventInfo(props) {
 
           <Form.Group controlId="invitees" >
             <Form.Label>Number of Invitees</Form.Label>
-            <Form.Control  placeholder="" onChange={handleOnInviteesChange} />
+            <Form.Control  placeholder="" name="invitees" onChange={handleOnInviteesChange} />
           </Form.Group>
 
           <Form.Group controlId="eventPurpose" className="mt-3">
             <Form.Label>Event Purpose</Form.Label>
-            <Form.Control as='select' onChange={handleOnPurposeChange}>
+            <Form.Control as='select' name="eventPurpose" onChange={handleOnPurposeChange}>
               <option value=''>Select a Purpose:</option>
               <option value='personal'>Personal</option>
               <option value='charity'>Charity</option>
@@ -111,7 +80,7 @@ function EventInfo(props) {
           </Form.Group>
 
           <Form.Group controlId="eventTerms" className="mt-3" >
-            <Form.Check  type='checkbox' value={state.terms}  label='terms and conditions' onChange={handleOnTermChange}/>
+            <Form.Check  type='checkbox' name="eventTerms" value={state.terms}  label='terms and conditions' onChange={handleOnTermChange}/>
           </Form.Group>
 
             <Accordion defaultActiveKey="0">

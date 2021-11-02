@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 function Payment() {
 
   return (
-<div classNameNameName="conatiner ">
- <div className="container p-0">
+      <div style={{backgroudColor: 'red'}}>
+ <div className="container p-0" >
     <div className="card px-4">
         <p className="h8 py-3">Payment Details</p>
         <div className="row gx-3">
@@ -36,7 +36,7 @@ function Payment() {
         </div>
     </div>
 </div>
- </div>
+</div>
 )
 
 }
