@@ -1,4 +1,5 @@
 import './payment.css'
+import {Link} from 'react-router-dom'
 function Payment() {
 
   return (
@@ -28,7 +29,9 @@ function Payment() {
                 </div>
             </div>
             <div className="col-12">
+                <Link to="/">
                 <div className="btn btn-primary mb-3"> <span className="ps-3">Pay $243</span> <span className="fas fa-arrow-right"></span> </div>
+                </Link>
             </div>
         </div>
     </div>

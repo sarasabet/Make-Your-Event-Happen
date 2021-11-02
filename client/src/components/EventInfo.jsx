@@ -1,7 +1,9 @@
+
 import {Button, Form, Container, Row, Col, Card, Accordion} from 'react-bootstrap'
 import './eventinfo.css' 
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 function EventInfo(props) {
   
   const [state, setState] = useState({
@@ -135,8 +137,8 @@ function EventInfo(props) {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-
-          <Button className="mt-5" type='submit'>Submit Review</Button>
+          <Link to='/payment'className="mt-5"  > Submit Review</Link>
+          {/* <Button className="mt-5" type='submit'>Submit Review</Button> */}
         </Form>
         </div>
             </Col>

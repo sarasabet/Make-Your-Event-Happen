@@ -9,9 +9,9 @@ import axios from 'axios'
 import CalaenderH from './components/CalaenderH'
 import EventInfo from './components/EventInfo';
 import Footer from './components/Footer';
-import SelectHourDay from './components/SelectHourDay';
 import ShowOneEvent from './components/ShowOneEvent';
 import AboutUs from './components/AboutUs'
+import Payment from './components/Payment'
 
 
 import React, { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ import {
 } from "react-router-dom";
 
 import Calender from './components/Calaender'
-import SelectHour from './components/SelectHour';
+
 
 
 function App() {
@@ -58,13 +58,14 @@ function App() {
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/signin" exact component={SignIn} />
           <Route path="/signup" exact component={SignUp} />
-          {/* <Route path="/showoneevent/:id" exact component={ShowOneEvent}/> */}
           <Route path="/aboutus" exact component={AboutUs} />
           <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
+          <Route path="/payment" exact component={Payment}/>
     
           <Route path="/selectdays">
             <Calender event={event[0]} />
           </Route>
+
           <Route path="/selecthours">
             <CalaenderH event={event[0]} />
           </Route>
