@@ -8,14 +8,14 @@ function Footer() {
 
 
     <ReactBootstrap.Navbar  sticky="bottom" className='navbar hadow p-3 mb-5 rounded'  collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <ReactBootstrap.Container>
+      {/* <ReactBootstrap.Container> */}
         <ReactBootstrap.Navbar.Brand style={{color:'red'}} className='brand' href="/">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
 
           <ReactBootstrap.Nav>
             <Link to="/calender">Book Event</Link>
           </ReactBootstrap.Nav>
 
-      </ReactBootstrap.Container>
+      {/* </ReactBootstrap.Container> */}
     </ReactBootstrap.Navbar>
   
   
