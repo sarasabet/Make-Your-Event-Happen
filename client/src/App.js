@@ -48,7 +48,9 @@ function App() {
 
   console.log("Show set", show)
   return (
-    <div className="App">
+    <div>
+    {/* <EventInfo /> */}
+
       <Router>  
         
         <Navigation />

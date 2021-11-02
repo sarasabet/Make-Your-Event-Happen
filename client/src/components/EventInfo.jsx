@@ -5,9 +5,9 @@ import axios from 'axios'
 function EventInfo(props) {
   
   const [state, setState] = useState({
-    event_type_id: 0,
+    
     description: "",
-    event_image_id: 1,
+    event_type_id: 1,
     invitees: 0,
     purpose: "",
     terms: false,
@@ -19,19 +19,6 @@ function EventInfo(props) {
   });
 
    const handleSubmit = (e) => {
-//     e.preventDefault()
-//     fetch(`http://localhost:3001/api/events`)
-//     .then(resp => resp.json())
-//     .then(data => {
-//         // handling errors if any.
-//         if (data.error){
-//             this.setState({ error: data.error })
-//         } else {
-//             this.setState({ recipes: data })
-//         }
-//     })
-
-// }
     e.preventDefault()
     console.log("data", state)
     axios({
@@ -47,7 +34,7 @@ function EventInfo(props) {
   }
 
   function handleOnNameChange(e) {
-    setState({ ...state, name: e.target.value})
+    setState({ ...state, event_type_id: e.target.value})
     console.log(e.target.value)
   }
   function handleOnDescChange(e) {

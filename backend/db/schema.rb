@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_203123) do
+ActiveRecord::Schema.define(version: 2021_11_01_230856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 2021_11_01_203123) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_event_bookings_on_event_id"
     t.index ["user_id"], name: "index_event_bookings_on_user_id"
-  end
-
-  create_table "event_images", force: :cascade do |t|
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "event_type_id"
-    t.index ["event_type_id"], name: "index_event_images_on_event_type_id"
   end
 
   create_table "event_types", force: :cascade do |t|
@@ -83,8 +75,6 @@ ActiveRecord::Schema.define(version: 2021_11_01_203123) do
 
   add_foreign_key "event_bookings", "events"
   add_foreign_key "event_bookings", "users"
-  add_foreign_key "event_images", "event_types"
-  add_foreign_key "events", "event_images"
   add_foreign_key "events", "event_types"
   add_foreign_key "payments", "event_bookings"
 end
