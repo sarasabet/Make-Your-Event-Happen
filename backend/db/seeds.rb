@@ -38,31 +38,6 @@ type2 = EventType.find_or_create_by!  name: 'Cooking'
 type3 = EventType.find_or_create_by!  name: 'Painting'
 type4 = EventType.find_or_create_by!  name: 'Music'
 
-## Event Images
-EventImage.destroy_all
-puts "Finding or Creating Event Images ..."
-
-img1 =  EventImage.create!({
-  event_type_id: type1.id,
-  url: 'https://media.istockphoto.com/photos/table-setting-for-an-event-party-or-wedding-reception-picture-id479977238?s=612x612'
-})
-img2 = EventImage.create!({
-  event_type_id: type1.id,
-  url:'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
-})
-img3 = EventImage.create!({
-  event_type_id: type2.id,
-  url: 'https://images.unsplash.com/photo-1549451371-64aa98a6f660?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
-})
-img4 = EventImage.create!({
-  event_type_id: type3.id,
-  url: 'https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'
-})
-img5 = EventImage.create!({
-  event_type_id: type4.id,
-  url: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'
-})
-
 puts "Finding or Creating Event Images ..."
 
 Image.create({
@@ -164,7 +139,7 @@ Event.create!({
 
 User.create!({
   id:1,
-  name:'user1',
+  name:'User1',
   email:'user@test.com',
   password:'0000',
   confirm_password:'0000',
@@ -189,4 +164,3 @@ User.create!({
 
 
 puts "DONE!"
-

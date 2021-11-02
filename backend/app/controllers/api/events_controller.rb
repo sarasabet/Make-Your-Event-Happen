@@ -15,20 +15,22 @@ class Api::EventsController < ApplicationController
     @events = Event.new(event_params)
     p 'hellooooooooo' 
     
-    if @events.save
-        render json: {status: "SUCCESS", message: "added a new event!", data: @events}, status: :ok
-      else
-        render json: {status: "ERROR", message: "couldn't add a event", data: @events.errors}, status: :unprocessable_entity
-      end
+    # if @events.save
+    #     render json: {status: "SUCCESS", message: "added a new event!", data: @events}, status: :ok
+    #   else
+    #     render json: {status: "ERROR", message: "couldn't add a event", data: @events.errors}, status: :unprocessable_entity
+    #   end
 
-    #   EventMailer.with(event: @events).new_event_request_email
 
-    #   flash[:success] = "Your order has been successfully booked.Thank you for your business"
-    #   redirect_to root_path
-    # else
-    #   flash.now[:error] = "Your order has been rejected ."
-    #   render :new
-    # end
+      # EventMailer.with(event: @events).new_event.deliver
+      EventMailer.new_event.deliver_now
+
+      flash[:success] = "Your order has been successfully booked.Thank you for your business"
+      redirect_to root_path
+    else
+      flash.now[:error] = "Your order has been rejected ."
+      render :new
+    end
 
   end
 
