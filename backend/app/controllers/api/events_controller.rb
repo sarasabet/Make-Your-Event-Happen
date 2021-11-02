@@ -2,16 +2,13 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @events = @events.where("start_date = ?", params[:start_date]) if params[:start_date] 
     render json: @events
   end
 
   def show
-      # event = Event.find params[:id]
- 
-    puts params
-    event = Event.where("start_date = ?", params[:start_date])
-    #  event = Event.where("is_active = ?", params[:is_active])
-    render json: event
+      event = Event.find params[:id]
+     render json: event
   end
 
   def create
@@ -19,9 +16,9 @@ class Api::EventsController < ApplicationController
     p 'hellooooooooo' 
     
     if @events.save
-        render json: {status: "SUCCESS", message: "added a new user!", data: @events}, status: :ok
+        render json: {status: "SUCCESS", message: "added a new event!", data: @events}, status: :ok
       else
-        render json: {status: "ERROR", message: "couldn't add a user", data: @events.errors}, status: :unprocessable_entity
+        render json: {status: "ERROR", message: "couldn't add a event", data: @events.errors}, status: :unprocessable_entity
       end
 
     #   EventMailer.with(event: @events).new_event_request_email
@@ -44,9 +41,9 @@ class Api::EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :event_type_id,
-      :event_image_id, 
+     
       :description,
+      :event_type_id,
       :start_date,
       :end_date,
       :start_time,
