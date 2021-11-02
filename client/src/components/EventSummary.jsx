@@ -39,10 +39,10 @@ function EventSummary(props) {
     <div class='event-summary'>
       <h4>
         Dear {user.name}, please review your event order bellow:
-      </h4>
+      </h4><br/><br/><br/>
       <Card style={{ width: '50rem' }}>
         <Card.Header>Event Summary</Card.Header>
-        <ListGroup variant="flush">
+        <ListGroup variant="flush"><br/>
 
           <ListGroup.Item>Start date: {moment(state.start_date).format("LL")}</ListGroup.Item>
           <ListGroup.Item>End date: {moment(state.end_date).format("LL")}</ListGroup.Item>
@@ -51,7 +51,7 @@ function EventSummary(props) {
           <ListGroup.Item>{state.description} in</ListGroup.Item>
           <ListGroup.Item>Total : {total}</ListGroup.Item>
 
-        </ListGroup>
+        </ListGroup><br/><br/><br/>
         <Link  className='bookevent-btn md fluid'onClick={handelPrice} to="/payment">Process Payment</Link>
       </Card>
     </div>

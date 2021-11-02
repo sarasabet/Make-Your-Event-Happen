@@ -33,7 +33,7 @@ function Payment() {
                         </div>
                         <div className="col-12">
                             <Link to="/">
-                                <div className="btn btn-primary mb-3"> <span className="ps-3">Pay $243</span> <span className="fas fa-arrow-right"> </span> </div>
+                                <div className="btn btn-primary mb-3"> <span className="ps-3">Pay $2400</span> <span className="fas fa-arrow-right"> </span> </div>
                             </Link>
 
                         </div>
