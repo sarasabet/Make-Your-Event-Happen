@@ -38,6 +38,11 @@ type2 = EventType.find_or_create_by!  name: 'Cooking'
 type3 = EventType.find_or_create_by!  name: 'Painting'
 type4 = EventType.find_or_create_by!  name: 'Music'
 
+<<<<<<< HEAD
+=======
+## Event Images
+
+>>>>>>> a2ff83688395359b23f67d496e452459f029a411
 puts "Finding or Creating Event Images ..."
 
 Image.create({
