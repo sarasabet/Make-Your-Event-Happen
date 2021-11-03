@@ -30,7 +30,7 @@ function EventSummary(props) {
       })
   }, [])
 
-  const { user, startHandleSelect } = useApplicationData()
+  const { user } = useApplicationData()
   const summary = eventSummary
 
 console.log("eventSummary", summary)

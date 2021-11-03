@@ -7,7 +7,7 @@ function Footer() {
   return (
 
 
-    <ReactBootstrap.Navbar  className='navbar hadow p-3 mb-5 rounded'  collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <ReactBootstrap.Navbar  className='navbar hadow p-3 footer'  collapseOnSelect expand="lg" bg="dark" variant="dark">
       {/* <ReactBootstrap.Container> */}
         <ReactBootstrap.Navbar.Brand style={{color:'red'}} className='brand' href="/">MAke YOur Event HAppen</ReactBootstrap.Navbar.Brand>
 

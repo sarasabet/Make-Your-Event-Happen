@@ -7,24 +7,27 @@ function HomePage() {
   return (
 
 
-      <div class="parent-container d-flex">
-        <div class="container-left">
-          <div class="row">
-            <div  class="col">
-              <h1>Any event</h1>
-              <h1>Every audience</h1>
-              <h1>One platform.</h1>
+      <div className="parent-container d-flex">
+        <div className="container-left">
+          <div className="row">
+            <div  className="col">
+            <i className="fas fa-5x">
+              <p>Any event</p>
+              <p>Every </p>
+                <p>audience</p>
+              <p>One platform.</p></i>
             </div>
           </div>
         </div>
 
-        <div class="container-right">
-          <div class="row">
-            <div class="col">
+        <div className="container-right">
+          <div className="row">
+            <div className="col">
+            
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit longer
             </div>
-            <div class='container-right-linksd' >
+            <div className='container-right-linksd ' >
 
               <Link md  className='bookevent-btn md fluid' to="/calender">Book Event</Link>
               <Link md  className='learnMore-btn md' to="/aboutus">Learn More</Link>

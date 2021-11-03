@@ -36,10 +36,13 @@ function UpcomingEvents(props) {
   }
   
   return(
-    <div>
-    {/* <div className='bg-container'> </div> */}
-      <h1 className="mt-2 text-start ms-5">Upcoming Events</h1>
-      <div className = "card-container">
+    <div className='bg-container'>
+      <h1 className="mt-2 text-start ms-5 container">
+      <i className="fas fa-1x ">
+        Upcoming Events
+      </i>
+      </h1>
+      <div className = "card-container ">
         {        
            events.map(event => <EventCard key={event.id} event ={event}  onClick={selectedImage}/>)
         }

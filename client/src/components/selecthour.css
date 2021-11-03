@@ -7,17 +7,15 @@
 }
 .canbook {
   height: 120px;
-  background-color: rgb(10, 106, 240);
+  background-color: rgb(106, 164, 247);
   /* opacity: 0.5; */
-
 }
 
 .cannotbook {
   height: 120px;
-  background-color: rgb(250, 7, 7);
+  background-color: rgb(252, 161, 161);
   /* opacity: 0.6; */
 }
-.book-container{
+.book-container {
   margin-top: 10em;
 }
-

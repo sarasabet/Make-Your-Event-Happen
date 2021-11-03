@@ -1,5 +1,6 @@
 
 import './login.css'
+import { Link } from 'react-router-dom'
 function LogIn() {
 
   return (
@@ -30,7 +31,7 @@ function LogIn() {
                                 <div className="col-lg-6 login-btm login-text">
                                 </div>
                                 <div className="col-lg-6 login-btm login-button">
-                                    <button type="submit" className="btn btn-outline-primary">LOGIN</button>
+                                <Link to='/admin' className="btn btn-outline-primary">LOGIN </Link>
                                 </div>
                             </div>
                         </form>

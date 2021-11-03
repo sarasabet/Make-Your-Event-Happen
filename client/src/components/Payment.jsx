@@ -1,45 +1,59 @@
 import './payment.css'
 import { Link } from 'react-router-dom'
+import { atom , useRecoilValue } from 'recoil'
+import { eventId as eventIdAtom } from './atoms'
 import useApplicationData from '../hooks/useApplicationData'
+import axios from 'axios'
+
 function Payment() {
-  
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
+    const { user } = useApplicationData()
+    // const event_id = useRecoilValue(eventIdAtom)
+    const event_id = 6;
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("Hello")
+        const event_booking = {
+          user_id: user.user_id,
+          event_id: event_id,
+          confirmation: 'pending'
+        }
+        console.log("event booking", event_booking)
+        axios({
+          method: 'POST',
+          url: "/api/event_bookings",
+          data: event_booking
+        })
+          .then(resp => {
+            console.log("response from event booking ", resp)
+            axios.get("/api/event_bookings")
+              .then(res => {
+                const data = res.data
+                const book_event = data[data.length - 1]
+                console.log("book event", book_event)
+                const payment = {
+                    event_booking_id: book_event.id,
+                    status_of_payment: 'pending'
+                }
+                axios({
+                    method: 'POST',
+                    url: "/api/payments",
+                    data: payment
+                  })
+                  .then(resp => {
+                      console.log("response from payment", resp)
+                  })
+              })
+          })
     
-    //     const state = {
-    //       start_date: startDate,
-    //       end_date: endDate,
-    //       start_time: `${startTime}:00:00`,
-    //       end_time: `${endTime}:00:00`,
-    //       event_type_id: eventType,
-    //       description: desc,
-    //       purpose: purpose,
-    //       is_active: 'false',
-    //     }
-    //     console.log("State data", state)
-    
-    //     axios({
-    //       method: 'POST',
-    //       url: "/api/events",
-    //       data: state
-    //     })
-    //       .then(resp => {
-    //         console.log("response: ", resp)
-    //         axios.get("/api/events")
-    //           .then(res => {
-    //             const data = res.data
-    //             console.log("data", data[data.length - 1])
-    //             setEventId(prev => data[data.length - 1])
-    //           })
-    //       })
-    
-    //   }
+      }
 
 
     return (
 
         <div className="payment-container">
             <div className="container p-0" >
+                <form onSubmit={handleSubmit}>
                 <div className="card px-4">
                     <p className="h8 py-3">Payment Details</p>
                     <div className="row gx-3">
@@ -62,11 +76,9 @@ function Payment() {
                             <div className="d-flex flex-column">
                                 <p className="text mb-1">CVV/CVC</p> <input className="form-control mb-3 pt-2 " type="password" placeholder="***" />
                             </div>
-                            {/* <Link to="/">
-                                <div className="btn btn-primary mb-3"> <span className="ps-3">Pay $243</span> <span className="fas fa-arrow-right"></span> </div>
-                            </Link> */}
-                            <Link to="/eventconfirmation" className="btn btn-primary mb-3">>
-                                <button type="submit">
+            
+                            <Link to="/eventconfirmation" className="btn btn-primary mb-3">
+                                <button type="submit" >
                                    PRocess payment
                                 </button>
                             </Link>
@@ -74,6 +86,7 @@ function Payment() {
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
 

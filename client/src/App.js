@@ -14,6 +14,9 @@ import AboutUs from './components/AboutUs'
 import Payment from './components/Payment'
 import EventSummary from './components/EventSummary';
 import EventConfirmation from './components/EventConfirmation'
+import Admin from './components/Admin'
+import EventRequest from './components/Admin/EventRequest';
+import Login from './components/Admin/LogIn'
 
 import React, { useEffect, useState } from "react";
 import {
@@ -49,11 +52,12 @@ function App() {
 
   console.log("Show set", show)
   return (
-    <div className="App container">
+    <div className="App ">
       <Router>
 
         <Navigation />
-
+        {/* <Admin /> */}
+        {/* <Payment /> */}
         <Switch>
         <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
           <Route path="/eventinfo" exact component={EventInfo} />
@@ -73,16 +77,21 @@ function App() {
             <CalaenderH event={event[0]} getInfo={handleInfo}/>
           </Route>
 
+          <Route path="/admin" exact component={Admin}/>
+          <Route path="/admin/login" exact component={Login}/>
+
           <Route path="/">
             <HomePage />
             <UpcomingEvents events={event[0]} />
             <SelectBooking />
+            <AboutUs />
+            <Footer />
           </Route>
 
-
+  
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </Router>
  
