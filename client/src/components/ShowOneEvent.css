@@ -1,8 +1,10 @@
 img {
-  width: 100px; 
-  min-height: 50%;
-  float: left;
-  margin: 10px;
+
+  display: block;
+  width: 100%;
+  height: 50vh;
+  margin-top:10em;
+  margin-bottom: 3em;
 }
 .card-singleEvent{
   display: inline-block;

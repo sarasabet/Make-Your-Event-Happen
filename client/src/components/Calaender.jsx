@@ -46,7 +46,7 @@ const Calender = (props) => {
 
   const allBookedDays = getAllDays(event)
   console.log('state on Calender', state)
-
+  const highlightDates=allBookedDays
   return (
     <div id='calender'>
       <h3> Please select a day </h3>
@@ -62,6 +62,7 @@ const Calender = (props) => {
             placeholderText="Seelect start date"
             excludeDates={allBookedDays}
             isClearable
+            highlightDates={highlightDates}
 
 
           />
@@ -76,6 +77,7 @@ const Calender = (props) => {
             placeholderText="Seelect start date"
             excludeDates={allBookedDays}
             isClearable
+            highlightDates={highlightDates}
           />
         </div>
       </div>
@@ -90,6 +92,7 @@ const Calender = (props) => {
         </div>
       )}
         <div>
+         
        To process your event booking please Login/ Signup
       </div>
       <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>

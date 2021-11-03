@@ -96,7 +96,7 @@ const CalaenderH = (props) => {
   const allBookedDays = getAllDays(event)
   // const time = getTime(data)
   // // console.log(allBookedDays)
-  
+  const highlightDates=allBookedDays
   return (
     <div id='calender'>
       <h3> Please select a day </h3>
@@ -110,6 +110,7 @@ const CalaenderH = (props) => {
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
             excludeDates={allBookedDays}
+            highlightDates={highlightDates}
           />
         </div>
         <div >
