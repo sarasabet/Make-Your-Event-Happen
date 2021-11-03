@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 .payment-container {
   height: 100vh;
-  /* padding-top: 6em; */
+  padding-top: 8em;
+  margin-top: 150px;
   background-color: black;
   color: white;
+  border: 1px solid #c8ced3;
+  border-radius: 0.25rem;
 }
 * {
   margin: 0;
@@ -17,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #0c4160;
+  /* background-color: #0c4160; */
   padding: 30px 10px;
 }
 
@@ -69,7 +72,9 @@ p {
 
 .form-control {
   color: white;
-  background-color: #223c60;
+  background-color: #f1fafa;
+  border: 1px solid #c8ced3;
+  border-radius: 0.25rem;
   border: 2px solid transparent;
   height: 60px;
   padding-left: 20px;

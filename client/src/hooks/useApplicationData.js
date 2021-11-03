@@ -4,18 +4,21 @@ import moment from "moment";
 export default function useApplicationData(props) {
   const date = new Date()
   // const date = moment(date_s).format().slice(0,10)
+
+  const [dateTime, setDateTime] = useState({
+    start_date: date,
+    end_date: date,
+    start_time: '09',
+    end_time: '',
+  })
+
   const [state, setState] = useState({
     event_type_id: 1,
     description: "", 
     invitees: 0,
     purpose: "",
     terms: false,
-    user_id: 1,
-    start_date: date,
-    end_date: date,
-    start_time: '09',
-    end_time: '',
-    is_active:   'true',
+    is_active: 'false',
   });
 
 const [user, setUser] = useState({
@@ -39,27 +42,27 @@ const [user, setUser] = useState({
   function startHandleSelect(e) {
 
     e = checkTime(e)
-    setState(prev => ({...prev, start_time: e}))
+    setDateTime(prev => ({...prev, start_time: e}))
   }
 
   const endHandleSelect=(e)=>{
+    console.log("end_time", e)
     e = checkTime(e)
-    setState(prev => ({...prev, end_time: e}))
-    console.log("end time", state.end_time)
+    console.log("end_time_2...", e)
+    setDateTime(prev => ({...prev, end_time: e})) 
   }
   const handleCheckOutDate = (date) => {
     // setCheckOutDate(date);
-    setState(prev => ({...prev, end_date: date}))
+    setDateTime(prev => ({...prev, end_date: date}))
   };
   const handleCheckInDate = (date) => {
     // setCheckInDate(prev =>  date);
-    setState(prev => ({...prev, start_date: date}))
-    setState(prev => ({...prev, end_date: date}))
+    setDateTime(prev => ({...prev, start_date: date}))
+    setDateTime(prev => ({...prev, end_date: date}))
   };
   function handleOnNameChange(e) {
+    //  console.log(e.target.value)
     setState({ ...state, event_type_id: e.target.value})
-    // console.log(e.target.value)
-    console.log("target name", e.target.name)
   }
   function handleOnDescChange(e) {
     setState({ ...state, description: e.target.value})
@@ -77,6 +80,6 @@ const [user, setUser] = useState({
     setState({ ...state, terms: e.target.value})
     // console.log(e.target.value)
   }
-  return { state , user, startHandleSelect, handleCheckInDate, endHandleSelect, handleCheckOutDate, handleOnNameChange,handleOnDescChange,handleOnPurposeChange,handleOnInviteesChange,handleOnTermChange,timeDisplay};
+  return { state , dateTime, user, startHandleSelect, handleCheckInDate, endHandleSelect, handleCheckOutDate, handleOnNameChange,handleOnDescChange,handleOnPurposeChange,handleOnInviteesChange,handleOnTermChange,timeDisplay};
 
 } 

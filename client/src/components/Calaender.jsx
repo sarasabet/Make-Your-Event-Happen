@@ -4,15 +4,29 @@ import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import './Calender.css'
 import { Link } from "react-router-dom";
-import useApplicationData from "../hooks/useApplicationData";
+import { atom, useRecoilState, useRecoilValue } from 'recoil'
+import { startDate as startDateAtom,  endDate as endDateAtom, startTime as startTimeAtom,  endTime as endTimeAtom} from './atoms'
 
 const Calender = (props) => {
-  // define check-in and check-out state
-  // const [checkInDate, setCheckInDate] = useState(null);
-  // const [checkOutDate, setCheckOutDate] = useState(null);
-  const { state, handleCheckInDate, handleCheckOutDate } = useApplicationData()
-  // define handler change function on check-in date
 
+  const [startDate, setStartDate] = useRecoilState(startDateAtom)
+  const [endDate, setEndDate] = useRecoilState(endDateAtom)
+  const [startTime, setStartTime] = useRecoilState(startTimeAtom)
+  const [endTime, setEndTime] = useRecoilState(endTimeAtom)
+
+
+  const handleCheckOutDate = (date) => {
+    setStartTime('09')
+    setEndTime('24')
+    setStartDate(prev => date)
+  };
+
+  const handleCheckInDate = (date) => {
+    setStartTime('09')
+    setEndTime('24')
+    setStartDate(prev => date)
+    setEndDate(prev => date)
+  };
 
   const event = props.event
   const getAllDays = (data) => {
@@ -33,8 +47,8 @@ const Calender = (props) => {
 
   const handleBookaDay = () => {
 
-    const start_Date = moment(state.start_date).format().slice(0, 10)
-    const end_Date = moment(state.end_date).format().slice(0, 10)
+    const start_Date = moment(startDate).format().slice(0, 10)
+    const end_Date = moment(endDate).format().slice(0, 10)
     // console.log('here', start_Date, end_Date)
   }
   handleBookaDay()
@@ -55,7 +69,7 @@ const Calender = (props) => {
         <div>
           <label>Start Day</label>
           <DatePicker
-            selected={state.start_date}
+            selected={startDate}
             minDate={new Date()}
             onChange={handleCheckInDate}
             dateFormat="MMMM, d, yyyy "
@@ -69,8 +83,8 @@ const Calender = (props) => {
         <div>
           <label>End Day</label>
           <DatePicker
-            selected={state.end_date}
-            minDate={state.start_date}
+            selected={endDate}
+            minDate={startDate}
             onChange={handleCheckOutDate}
             dateFormat="MMMM, d, yyyy "
             placeholderText="Seelect start date"
@@ -81,11 +95,11 @@ const Calender = (props) => {
       </div>
 
 
-      {state.start_date && state.end_date && (
+      {startDate && endDate && (
         <div className="summary">
           <p>
-            You book an event from {moment(state.start_date).format("LL")} to{" "}
-            {moment(state.end_date).format("LL")}.
+            You book an event from {moment(startDate).format("LL")} to{" "}
+            {moment(endDate).format("LL")}.
           </p>
         </div>
       )}

@@ -1,16 +1,19 @@
 import './payment.css'
 import {Link} from 'react-router-dom'
+import useApplicationData from '../hooks/useApplicationData'
 function Payment() {
+    const { state ,user } = useApplicationData()
+
 
   return (
-      <div style={{backgroudColor: 'red'}}>
+      <div className="payment-container">
  <div className="container p-0" >
     <div className="card px-4">
         <p className="h8 py-3">Payment Details</p>
         <div className="row gx-3">
             <div className="col-12">
                 <div className="d-flex flex-column">
-                    <p className="text mb-1">Person Name</p> <input className="form-control mb-3" type="text" placeholder="Name" value="Barry Allen" />
+                    <p className="text mb-1">Person Name</p> <input className="form-control mb-3" type="text" placeholder="Name" value={user.name} />
                 </div>
             </div>
             <div className="col-12">

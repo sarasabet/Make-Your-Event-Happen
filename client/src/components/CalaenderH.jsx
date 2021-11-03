@@ -8,24 +8,24 @@ import axios from 'axios'
 import SelectHour from "./SelectHour";
 import { Link } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
-
+import { atom, useRecoilState, useRecoilValue } from 'recoil'
+import { startDate as startDateAtom,  endDate as endDateAtom, startTime as startTimeAtom,  endTime as endTimeAtom} from './atoms'
 
 const CalaenderH = (props) => {
-  // define check-in and check-out state
-  // const tdate = new Date()
-  // const [checkInDate, setCheckInDate] = useState(tdate);
+ 
   const [eventTime, setEventTime] = useState([]);
-  // const [time, setTime] = useState([])
-  const { state, handleCheckInDate } = useApplicationData()
-  // define handler change function on check-in date
-  // console.log("StaTE...", state)
+  const [startDate, setStartDate] = useRecoilState(startDateAtom)
+  const [endDate, setEndDate] = useRecoilState(endDateAtom)
+  const startTime = useRecoilValue(startTimeAtom)
+  const endTime = useRecoilValue(endTimeAtom)
+ 
   const minTime = 2
   useEffect(() => {
     const url = `api/events/`
     console.log("url....", url)
     const params = {}
     // const checkInDate = state.start_date
-    if (state.start_date) params['start_date'] = `${moment(state.start_date).format().slice(0,10)}`
+    if (startDate) params['start_date'] = `${moment(startDate).format().slice(0,10)}`
     axios.get("api/events" , {params})
       .then(res => {     
         const data = res.data
@@ -56,10 +56,15 @@ const CalaenderH = (props) => {
          setEventTime(times)         
       })
 
-  }, [state.start_date])
+  }, [startDate])
   console.log("event Calender", eventTime)
   // console.log("Time...", time)
 
+  const handleCheckInDate = (date) => {
+    // setCheckInDate(prev =>  date);
+    setStartDate(prev => date)
+    setEndDate(prev => date)
+  };
 
 
    const event = props.event
@@ -87,7 +92,7 @@ const CalaenderH = (props) => {
 // change the selected date format to a psql acceptable format 
   const handleBookaDay =() =>{
  
-    const start_Date = moment(state.start_date).format().slice(0,10)
+    const start_Date = moment(startDate).format().slice(0,10)
 
   }
   handleBookaDay()
@@ -104,7 +109,7 @@ const CalaenderH = (props) => {
         <div>
           <label>Start Day</label>
           <DatePicker
-            selected={state.start_date}
+            selected={startDate}
             minDate={new Date()}
             onChange={handleCheckInDate}
             dateFormat="MMMM, d, yyyy "
@@ -117,15 +122,15 @@ const CalaenderH = (props) => {
       <div className="container">
       {
           // events.map((event, index) => <SelectHour  start_time={event.start_time} end_time={event.end_time} time={time} prev_time={events[index-1]}  minTime={minTime} onClick={onSlectTime}/> )
-          eventTime.map((event, index) => <SelectHour key={index}  start_time={event.start_time} end_time={event.end_time} canBook={event.canBook}  minTime={minTime} /> )
+          eventTime.map((event, index) => <SelectHour key={index}  start_time={event.start_time} end_time={event.end_time} canBook={event.canBook}  minTime={minTime} getInfo={props.getInfo} /> )
       }
       </div>
     </div>
-      {state.start_date && (
+      {startDate && (
         <div className="summary">
           <p>
-            You book an event for {moment(state.start_date).format("LL")} to{" "} 
-    
+            You book an event for {moment(startDate).format("LL")} to{" "} 
+            at start-time: {startTime} to {endTime}
           </p>
         </div>
       )}

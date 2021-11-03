@@ -41,9 +41,9 @@ function App() {
       })
   }, [])
 
-  const handleSelectBooking = (e) => {
-    console.log("select booking", e.target.value)
-    setShow(prev => prev = e.target.value)
+  const handleInfo= (dateTime) => {
+    console.log("select booking", dateTime)
+    setShow(prev => ({...prev, dateTime}))
   }
 
   console.log("Show set", show)
@@ -68,7 +68,7 @@ function App() {
           </Route>
 
           <Route path="/selecthours">
-            <CalaenderH event={event[0]} />
+            <CalaenderH event={event[0]} getInfo={handleInfo}/>
           </Route>
 
           <Route path="/">
