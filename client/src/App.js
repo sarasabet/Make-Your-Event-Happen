@@ -13,7 +13,7 @@ import ShowOneEvent from './components/ShowOneEvent';
 import AboutUs from './components/AboutUs'
 import Payment from './components/Payment'
 import EventSummary from './components/EventSummary';
-
+import EventConfirmation from './components/EventConfirmation'
 
 import React, { useEffect, useState } from "react";
 import {
@@ -63,6 +63,7 @@ function App() {
           <Route path="/aboutus" exact component={AboutUs} />
           <Route path="/eventsummary" exact component={EventSummary}/>
           <Route path="/payment" exact component={Payment}/>
+          <Route path="/eventconfirmation" exact component={EventConfirmation}/>
     
           <Route path="/selectdays">
             <Calender event={event[0]} />
