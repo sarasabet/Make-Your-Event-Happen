@@ -59,7 +59,7 @@ const Calender = (props) => {
 
 
   const allBookedDays = getAllDays(event)
-  console.log('state on Calender', state)
+
   const highlightDates=allBookedDays
   return (
     <div id='calender'>

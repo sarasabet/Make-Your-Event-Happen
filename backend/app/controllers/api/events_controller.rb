@@ -15,11 +15,11 @@ class Api::EventsController < ApplicationController
     @events = Event.new(event_params)
     p 'hellooooooooo' 
     
-    # if @events.save
-    #     render json: {status: "SUCCESS", message: "added a new event!", data: @events}, status: :ok
-    #   else
-    #     render json: {status: "ERROR", message: "couldn't add a event", data: @events.errors}, status: :unprocessable_entity
-    #   end
+    if @events.save
+        render json: {status: "SUCCESS", message: "added a new event!", data: @events}, status: :ok
+      else
+        render json: {status: "ERROR", message: "couldn't add a event", data: @events.errors}, status: :unprocessable_entity
+      end
 
 
       # EventMailer.with(event: @events).new_event.deliver
@@ -42,8 +42,7 @@ class Api::EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(
-     
+    params.require(:event).permit(   
       :description,
       :event_type_id,
       :start_date,
