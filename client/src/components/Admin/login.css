@@ -1,7 +1,7 @@
-body {
+/* body {
   background: #222d32;
   font-family: "Roboto", sans-serif;
-}
+} */
 
 .login-box {
   margin-top: 150px;
@@ -17,7 +17,7 @@ body {
   line-height: 100px;
   background: -webkit-linear-gradient(#27ef9f, #0db8de);
   /* -webkit-background-clip: text; */
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
 }
 
 .login-title {
@@ -33,9 +33,10 @@ body {
 .login-form {
   margin-top: 25px;
   text-align: left;
+  color: #ecf0f5;
 }
 
-input[type="text"] {
+/* input[type="text"] {
   background-color: #1a2226;
   border: none;
   border-bottom: 2px solid #0db8de;
@@ -104,10 +105,11 @@ label {
 .btn-outline-primary:hover {
   background-color: #0db8de;
   right: 0px;
-}
+}*/
 
 .login-btm {
-  float: right;
+  float: center;
+  margin-left: 8em;
 }
 
 .login-button {

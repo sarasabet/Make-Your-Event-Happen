@@ -18,14 +18,12 @@ function UpcomingEvents(props) {
       const date_s = new Date()
       const date = moment(date_s).format().slice(0,10)
       const upcomin_events = res.data
-      console.log("data events...", upcomin_events)
       for(let item in upcomin_events) {
-        console.log("start date",upcomin_events[item].start_date, date )
         if(upcomin_events[item].start_date >= date) {
           items.push(upcomin_events[item])
         }
       }
-      console.log("items..", items)
+
         setEvents(items)
     })
 

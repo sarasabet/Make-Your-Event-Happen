@@ -17,12 +17,11 @@ const CalaenderH = (props) => {
   const [startDate, setStartDate] = useRecoilState(startDateAtom)
   const [endDate, setEndDate] = useRecoilState(endDateAtom)
   const startTime = useRecoilValue(startTimeAtom)
-  const endTime = useRecoilValue(endTimeAtom)
+  const [endTime, setEndTime] = useRecoilState(endTimeAtom)
  
   const minTime = 2
   useEffect(() => {
     const url = `api/events/`
-    console.log("url....", url)
     const params = {}
     // const checkInDate = state.start_date
     if (startDate) params['start_date'] = `${moment(startDate).format().slice(0,10)}`
@@ -64,6 +63,7 @@ const CalaenderH = (props) => {
     // setCheckInDate(prev =>  date);
     setStartDate(prev => date)
     setEndDate(prev => date)
+    setEndTime(prev => '')
   };
 
 
@@ -89,7 +89,7 @@ const CalaenderH = (props) => {
 
     return bookedDays
   }
-// change the selected date format to a psql acceptable format 
+
   const handleBookaDay =() =>{
  
     const start_Date = moment(startDate).format().slice(0,10)
@@ -99,15 +99,14 @@ const CalaenderH = (props) => {
 
   
   const allBookedDays = getAllDays(event)
-  // const time = getTime(data)
-  // // console.log(allBookedDays)
+
   const highlightDates=allBookedDays
   return (
-    <div id='calender'>
-      <h3> Please select a day </h3>
+    <div id='calender' >
+      <h3 style={{marginTop: '1em'}}> Please select a day </h3>
 
         <div>
-          <label>Start Day</label>
+          <label style={{marginTop: '.5em', marginBottom: '.5em'}}>Start Day</label>
           <DatePicker
             selected={startDate}
             minDate={new Date()}
@@ -119,7 +118,7 @@ const CalaenderH = (props) => {
           />
         </div>
         <div >
-      <h1>Book Your Event</h1>
+      <h1 style={{marginTop: '1em', marginBottom: '.5em'}}>Book Your Event</h1>
       <div className="container">
       {
           // events.map((event, index) => <SelectHour  start_time={event.start_time} end_time={event.end_time} time={time} prev_time={events[index-1]}  minTime={minTime} onClick={onSlectTime}/> )
@@ -127,21 +126,20 @@ const CalaenderH = (props) => {
       }
       </div>
     </div>
-      {startDate && (
+      {endTime && (
+        <div>
+          <br /><br/>
         <div className="summary">
-          <p>
             You book an event for {moment(startDate).format("LL")} to{" "} 
-            at start-time: {startTime} to {endTime}
-          </p>
+            at start time: {startTime} to {endTime}      
+        </div>       
+          <div>
+          <p> To process your event booking please Login/ Signup</p>        
+          <Link to="/signin" className="btn btn-outline-light btn-m px-4 mb-2">Signin</Link>
+         <Link to='/signup' className="btn btn-outline-light btn-m px-4">Signup</Link>
+         </div>   
         </div>
       )}
-      <br/><br/>
-      <div>
-       To process your event booking please Login/ Signup
-      </div>
-      <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>
-      <Link to='/signup' class="btn btn-outline-light btn-s px-4">Signup</Link>
- 
     </div>
   );
 };

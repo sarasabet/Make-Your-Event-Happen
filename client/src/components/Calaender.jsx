@@ -18,14 +18,13 @@ const Calender = (props) => {
   const handleCheckOutDate = (date) => {
     setStartTime('09')
     setEndTime('24')
-    setStartDate(prev => date)
+    setEndDate(prev => date)
   };
 
   const handleCheckInDate = (date) => {
     setStartTime('09')
     setEndTime('24')
     setStartDate(prev => date)
-    setEndDate(prev => date)
   };
 
   const event = props.event
@@ -49,25 +48,20 @@ const Calender = (props) => {
 
     const start_Date = moment(startDate).format().slice(0, 10)
     const end_Date = moment(endDate).format().slice(0, 10)
-    // console.log('here', start_Date, end_Date)
   }
   handleBookaDay()
-
-  // define handler change function on check-out date
-
-
 
 
   const allBookedDays = getAllDays(event)
 
   const highlightDates=allBookedDays
   return (
-    <div id='calender'>
-      <h3> Please select a day </h3>
+    <div id='calender' style={{height: '60vh'}}>
+      <h3 style={{marginTop: '1em'}}> Please select a day </h3>
 
       <div className="input-container">
         <div>
-          <label>Start Day</label>
+        <label style={{marginTop: '.5em', marginBottom: '.5em'}}>Start Day</label>
           <DatePicker
             selected={startDate}
             minDate={new Date()}
@@ -82,7 +76,7 @@ const Calender = (props) => {
           />
         </div>
         <div>
-          <label>End Day</label>
+          <label style={{marginTop: '.5em', marginBottom: '.5em'}}>End Day</label>
           <DatePicker
             selected={endDate}
             minDate={startDate}
@@ -99,19 +93,17 @@ const Calender = (props) => {
 
       {startDate && endDate && (
         <div className="summary">
-          <p>
+           <br /><br/> 
             You book an event from {moment(startDate).format("LL")} to{" "}
             {moment(endDate).format("LL")}.
-          </p>
+          <div>
+    
+         <p>To process your event booking please Login/ Signup</p>
+        </div>
+        <Link to="/signin" className="btn btn-outline-light btn-m px-4 mb-2">Signin</Link>
+         <Link to='/signup' className="btn btn-outline-light btn-m px-4">Signup</Link>
         </div>
       )}
-        <div>
-         
-       To process your event booking please Login/ Signup
-      </div>
-      <Link to="/signin"class="btn btn-outline-light btn-s px-4">Signin</Link>
-      <Link to='/signup' class="btn btn-outline-light btn-s px-4">Signup</Link>
-
     </div>
 
 

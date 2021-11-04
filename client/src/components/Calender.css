@@ -12,6 +12,7 @@
 
 .summary {
   margin: 1em;
+  margin-bottom: 0.5em;
 }
 .highlighted-class {
   background-color: tomato;

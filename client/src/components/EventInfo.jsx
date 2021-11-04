@@ -1,5 +1,5 @@
 
-import { Button, Form, Container, Row, Col, Card, Accordion } from 'react-bootstrap'
+import { Button, Form, Row, Col, Accordion } from 'react-bootstrap'
 import './eventinfo.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ function EventInfo(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    console.log("I am theer")
     const state = {
       start_date: startDate,
       end_date: endDate,
@@ -60,16 +60,16 @@ function EventInfo(props) {
   }
 
   return (
-    <div className="bg-container">
-      <Container>
+    <div className="event-container">
+      {/* <Container> */}
         <Row>
-          <Col s={8} md={8}>
+          <Col  md={9}>
             <div className="event-card">
 
               <Form id="event-info" autoComplete="off" onSubmit={handleSubmit}>
                 <Form.Group controlId="eventName" >
                   <Form.Label>Event Name</Form.Label>
-                  <Form.Control as='select' name="eventName" onChange={handleOnNameChange}>
+                  <Form.Control as='select' name="eventName"  onChange={handleOnNameChange}>
                     <option value=''>Select Event Type</option>
                     <option value='1'>Dance</option>
                     <option value='2'>Cooking</option>
@@ -83,7 +83,7 @@ function EventInfo(props) {
 
                 <Form.Group controlId="eventDescription" >
                   <Form.Label>Event Description</Form.Label>
-                  <Form.Control as='textarea' name="eventDescription" type="text" onChange={handleOnDescChange} value={desc} />
+                  <Form.Control as='textarea' name="eventDescription"  onChange={handleOnDescChange} value={desc} />
                   <Form.Text className="text-muted" >
                     Please enter the description of your event
                   </Form.Text>
@@ -127,11 +127,11 @@ function EventInfo(props) {
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
-              
-              <Link to="/eventsummary" className="mt-5">
-                <button type="submit">
-                  Click Me!
-                </button>
+                <Button type="submit" className="btn btn-primary mb-5 mt-5 fs-5 fw-5 pt-2" style={{marginLeft: '8em'}}>
+                  Place your Event Request
+                </Button>
+              <Link to="/eventsummary" >
+                Review Event Summry
               </Link>
               
             </Form>
@@ -140,7 +140,7 @@ function EventInfo(props) {
         <Col>
         </Col>
       </Row>
-    </Container>
+    {/* </Container> */}
         </div > 
   )
 }

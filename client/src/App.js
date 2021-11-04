@@ -39,27 +39,21 @@ function App() {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3001/api/events")
       .then(res => {
-        console.log("data", res.data)
         setEvent(prev => [...prev, res.data])
         //setEvent(res.data)
       })
   }, [])
 
-  const handleInfo= (dateTime) => {
-    console.log("select booking", dateTime)
-    setShow(prev => ({...prev, dateTime}))
-  }
-
-  console.log("Show set", show)
+  
   return (
     <div className="App ">
-      <Router>
+       <Router>
 
         <Navigation />
         {/* <Admin /> */}
         {/* <Payment /> */}
         <Switch>
-        <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
+          <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/signin" exact component={SignIn} />
@@ -74,7 +68,7 @@ function App() {
           </Route>
 
           <Route path="/selecthours">
-            <CalaenderH event={event[0]} getInfo={handleInfo}/>
+            <CalaenderH event={event[0]} />
           </Route>
 
           <Route path="/admin" exact component={Admin}/>
@@ -93,7 +87,7 @@ function App() {
 
         {/* <Footer /> */}
 
-      </Router>
+      </Router> 
  
 
     </div >

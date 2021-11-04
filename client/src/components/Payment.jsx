@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import { atom , useRecoilValue } from 'recoil'
 import { eventId as eventIdAtom } from './atoms'
 import useApplicationData from '../hooks/useApplicationData'
+import {Button} from 'react-bootstrap'
 import axios from 'axios'
+
 
 function Payment() {
     const { user } = useApplicationData()
@@ -50,12 +52,12 @@ function Payment() {
 
 
     return (
-
-        <div className="payment-container">
+        <div className="container payment-container">
+        {/* <div className="payment-container"> */}
             <div className="container p-0" >
                 <form onSubmit={handleSubmit}>
-                <div className="card px-4">
-                    <p className="h8 py-3">Payment Details</p>
+                <div className="card px-4 mt-5">
+                    <p className="h8 py-3 mt-3" style={{color:'black'}}><h3>Payment Details</h3></p>
                     <div className="row gx-3">
                         <div className="col-12">
                             <div className="d-flex flex-column">
@@ -76,20 +78,18 @@ function Payment() {
                             <div className="d-flex flex-column">
                                 <p className="text mb-1">CVV/CVC</p> <input className="form-control mb-3 pt-2 " type="password" placeholder="***" />
                             </div>
-            
-                            <Link to="/eventconfirmation" className="btn btn-primary mb-3">
-                                <button type="submit" >
-                                   PRocess payment
-                                </button>
-                            </Link>
-
                         </div>
+                        <Link to="/eventconfirmation" className="btn btn-primary mb-3 fs-5 fw-5" >
+                            <Button type="submit" >
+                                Process payment
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
-
+ 
     )
 }
 

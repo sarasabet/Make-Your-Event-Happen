@@ -35,7 +35,6 @@ function SelectHour(props) {
 
   const endHandleSelect=(e)=>{
     e = checkTime(e)
-    console.log("end_time_2...", e)
     setEndTime(prev => e) 
   }
   function createStartItems() { 
@@ -50,8 +49,6 @@ function SelectHour(props) {
 
   function createEndItems() { 
     let end_time = props.end_time 
-    console.log("tsrat TIme", startTime)
-    console.log("eNd time", endTime)
     let booking_slot =  Number(startTime) + minTime
     let items = [];       
       while (end_time >= booking_slot) {
@@ -68,12 +65,12 @@ function SelectHour(props) {
 
   return (
     <>
-    <div id='bookEventContainer'>
+    <div id='bookEventContainer' >
       { props.canBook ? 
-        <div className="canbook" >
+        <div className="canbook">
           <p className="pt-3"> You can book for {timeDisplay[props.start_time]} to {props.end_time} </p>
           <div className="time-select">
-            <Dropdown onSelect={startHandleSelect} className="me-3">
+            <Dropdown onSelect={startHandleSelect} className="me-3" >
                 <Dropdown.Toggle variant="black" id="dropdown-basic" >
                   Start Time
                 </Dropdown.Toggle>
@@ -95,14 +92,13 @@ function SelectHour(props) {
       :
         <div className='cannotbook'>
           <h1 className="pt-3">Booked</h1>
-          start_time: {timeDisplay[props.start_time]} 
-          end_time: {timeDisplay[props.end_time]}
+          Booked from {timeDisplay[props.start_time]} to {timeDisplay[props.end_time]}
         </div>
-      }    
-
+      }   
+      <p></p>
       </div>
-      end time {endTime}
-    </>
+      
+      </>
   )
 
 }

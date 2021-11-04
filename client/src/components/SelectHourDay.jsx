@@ -10,16 +10,9 @@ function SelectHourDay(props) {
   const minTime = 2
   
  useEffect(() => {
-    // for demo purposes, hardcoded URL
-   
-    // const data = [
-    //   {id: 1, name: 'Dance',start_time: '14:00:00', end_time: '18:0:0', img: 'https://media.istockphoto.com/photos/table-setting-for-an-event-party-or-wedding-reception-picture-id479977238?s=612x612'},
-    //   {id: 5,name: 'Painting',start_time: '21:00:00', end_time: '24:0:0', img: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'},
-    // ]  
+
     const data = props.events
-     console.log("Select Hour.... ", data)
-    // setEvents(data)
-    // console.log("Select Hour ", events)
+  
     let prev_time = '09'
 
     for (let time of data) {
@@ -34,17 +27,6 @@ function SelectHourDay(props) {
       }
     }
     }, [])
-
-  console.log("TIme..... ", time)
- 
- 
-  // function onSlectTime(start_time, end_time, id) {
-  //   setBooking(prev => {
-  //     prev[id]= {start_time, end_time}
-  //     return {... prev}
-  //   })
-  // }
-  // console.log("booking", booking);
 
   return (
     <div >
