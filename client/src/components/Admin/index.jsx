@@ -49,7 +49,7 @@ function Admin() {
       <div className="container">
         <div className="admin-nav">
           <div className="admin-nav-left"><h5>You are logged in as ADMIN</h5></div>
-          <div className="admin-nav-right text-danger"><h5>Messages</h5></div>
+          <div className="admin-nav-right text-danger">        <h3 className=" ms-3"style={{color: 'tomato'}}><i class="fas fa-envelope"></i></h3></div>
         </div>
       <div class="mt-3 border-top border-light">
       <h4 className="mt-5 mb-5 fst-italic fw-light">Here are some new reaquest</h4>

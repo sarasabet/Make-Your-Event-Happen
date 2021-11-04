@@ -56,6 +56,7 @@ const Calender = (props) => {
 
   const highlightDates=allBookedDays
   return (
+    <div className="calender-gradient">
     <div id='calender' style={{height: '60vh'}}>
       <h3 style={{marginTop: '1em'}}> Please select a day </h3>
 
@@ -105,7 +106,7 @@ const Calender = (props) => {
         </div>
       )}
     </div>
-
+    </div>
 
   );
 };

@@ -60,7 +60,7 @@ function EventInfo(props) {
   }
 
   return (
-    <div className="event-container">
+    <div className="event-container gradient-eventinfo">
       {/* <Container> */}
         <Row>
           <Col  md={9}>

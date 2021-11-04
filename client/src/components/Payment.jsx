@@ -52,7 +52,8 @@ function Payment() {
 
 
     return (
-        <div className="container payment-container">
+        <div className="payment-gradient">
+        <div className="container payment-container ">
         {/* <div className="payment-container"> */}
             <div className="container p-0" >
                 <form onSubmit={handleSubmit}>
@@ -89,7 +90,7 @@ function Payment() {
                 </form>
             </div>
         </div>
- 
+        </div>
     )
 }
 

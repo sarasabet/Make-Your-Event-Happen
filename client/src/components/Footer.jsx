@@ -14,7 +14,12 @@ function Footer() {
           <ReactBootstrap.Nav>
             <Link to="/calender">Book Event</Link>
           </ReactBootstrap.Nav>
+          <div className="d-flex flex-rowalign-items-end ms-5">
 
+          <h3 className=" ms-3"style={{color: 'white'}}><i class="fab fa-twitter"></i></h3>
+          <h3 className=" ms-3"style={{color: 'white'}}><i class="fab fa-instagram"></i></h3>
+          <h3 className=" ms-3"style={{color: 'white'}}><i class="fas fa-envelope"></i></h3>
+          </div>
       {/* </ReactBootstrap.Container> */}
     </ReactBootstrap.Navbar>
   
