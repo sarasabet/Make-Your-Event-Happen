@@ -1,4 +1,5 @@
 import './eventrequest.css'
+import {Link } from 'react-router-dom'
  function EventRequest(props) {
   
   
@@ -21,9 +22,9 @@ import './eventrequest.css'
        </tr>
        </table>       
       </div >
-      <div className="d-flex flex-row mt-4">
+      <div className="d-flex flex-row mt-3">
       {/* <div className="event-btn mt-4"> */}
-        <button className="btn btn-dark btn-md  me-3">Accept Request</button>
+      <Link to='/' className="btn btn-dark btn-md  me-3">Accept Request</Link>
         <button className="btn btn-dark btn-md">Reject Request</button>
       {/* </div> */}
       </div>

@@ -127,13 +127,15 @@ const CalaenderH = (props) => {
       }
       </div>
     </div>
-      {endTime && (
-        <div>
-          <br /><br/>
-        <div className="summary">
+    <br />
+    <div className="summary">
             You book an event for {moment(startDate).format("LL")} to{" "} 
             at start time: {startTime} to {endTime}      
         </div>       
+      {endTime && (
+        <div>
+          <br /><br/>
+      
           <div>
           <p> To process your event booking please Login/ Signup</p>        
           <Link to="/signin" className="btn btn-outline-light btn-m px-4 mb-2">Signin</Link>
@@ -142,6 +144,7 @@ const CalaenderH = (props) => {
         </div>
       )}
     </div>
+    
     </div>
   );
 };

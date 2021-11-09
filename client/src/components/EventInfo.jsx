@@ -30,6 +30,7 @@ function EventInfo(props) {
       description: desc,
       purpose: purpose,
       is_active: 'false',
+      image: 'https://www.danceinforma.com/wp-content/uploads/2019/12/Alvin-Ailey-American-Dance-Theater.-Photo-by-Andrew-Eccles..jpg'
     }
     console.log("State data", state)
 
@@ -47,8 +48,8 @@ function EventInfo(props) {
             setEventId(prev => data[data.length - 1])
           })
       })
-
   }
+  
   function handleOnNameChange(e) {
     setEventType(prev => e.target.value)
   }

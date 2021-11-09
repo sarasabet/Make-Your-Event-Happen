@@ -73,6 +73,7 @@ function App() {
 
           <Route path="/admin" exact component={Admin}/>
           <Route path="/admin/login" exact component={Login}/>
+          
 
           <Route path="/">
             <HomePage />

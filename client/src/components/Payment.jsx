@@ -9,8 +9,8 @@ import axios from 'axios'
 
 function Payment() {
     const { user } = useApplicationData()
-    // const event_id = useRecoilValue(eventIdAtom)
-    const event_id = 6;
+    const event = useRecoilValue(eventIdAtom)
+    const event_id = event.id;
 
     const handleSubmit = (e) => {
         e.preventDefault()

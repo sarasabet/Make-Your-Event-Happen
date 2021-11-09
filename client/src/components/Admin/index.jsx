@@ -8,13 +8,13 @@ function Admin() {
   // const [eventreqs, setEventreqs] = useState([])
   const incomingRequests = [{
     name: "Dance",
-    description: 'Amazing dancing events choreographed by all upcoming talent',
-    date: '2021-11-03',
+    description: 'dance',
+    date: '2021-11-04',
     start_time: '8 PM',
     end_time:   '10 PM',
     is_active:   'false',
     purpose:    'Personal',
-    image: 'https://images.unsplash.com/photo-1549451371-64aa98a6f660?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
+    image: 'https://www.danceinforma.com/wp-content/uploads/2019/12/Alvin-Ailey-American-Dance-Theater.-Photo-by-Andrew-Eccles..jpg'
   }]
   useEffect(() => {
     const url = `api/event_bookings/`

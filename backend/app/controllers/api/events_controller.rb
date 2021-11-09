@@ -51,6 +51,7 @@ class Api::EventsController < ApplicationController
       :end_time,
       :is_active,
       :purpose,
+      :image,
     )
   end
 
