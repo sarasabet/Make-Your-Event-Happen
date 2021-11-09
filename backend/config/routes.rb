@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     # resources :events, params: :start_date
     resources :event_bookings
     resources :payments
+    resources :users
   
   end
 

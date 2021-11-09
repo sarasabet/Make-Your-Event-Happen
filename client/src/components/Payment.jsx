@@ -18,7 +18,7 @@ function Payment() {
         const event_booking = {
           user_id: user.user_id,
           event_id: event_id,
-          confirmation: 'pending'
+          confirmation: 'false'
         }
         console.log("event booking", event_booking)
         axios({
@@ -80,11 +80,11 @@ function Payment() {
                                 <p className="text mb-1">CVV/CVC</p> <input className="form-control mb-3 pt-2 " type="password" placeholder="***" />
                             </div>
                         </div>
-                        <Link to="/eventconfirmation" className="btn btn-primary mb-3 fs-5 fw-5" >
+                        {/* <Link to="/eventconfirmation" className="btn btn-primary mb-3 fs-5 fw-5" > */}
                             <Button type="submit" >
                                 Process payment
                             </Button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
                 </form>

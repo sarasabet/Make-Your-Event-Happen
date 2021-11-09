@@ -2,7 +2,7 @@ class Api::EventBookingsController < ApplicationController
   
   def index
     @events = EventBooking.all
-    # @events = @events.where("confirmation = ?", params[:confirmation ]) if params[:confirmation ] 
+    @events = @events.where("confirmation = ?", params[:confirmation ]) if params[:confirmation ] 
   
 
     render json: @events

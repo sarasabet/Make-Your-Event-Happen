@@ -45,6 +45,8 @@ export const eventId = atom({
   default: [],
 })
 
-
-
+export const eventRequests = atom({
+  key: "event_req",
+  default: [],
+})
 
