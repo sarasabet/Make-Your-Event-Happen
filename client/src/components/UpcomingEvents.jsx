@@ -1,6 +1,6 @@
 import './UpcomingEvents.css'
 import moment from 'moment'
-
+import {Card, Row , Col} from 'react-bootstrap'
 import EventCard from './EventCard'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -40,13 +40,18 @@ function UpcomingEvents(props) {
         Upcoming Events
       </i>
       </h1>
-      <div className = "card-container ">
+<div class="container">
+
+          
         {        
            events.map(event => <EventCard key={event.id} event ={event}  onClick={selectedImage}/>)
         }
-      </div>
+  
+
     </div>
-   
+  </div>
+
+
   
   )
 }
