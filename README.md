@@ -37,5 +37,5 @@ Setting up databse schema's and seeds rails db:reset in server/backend directory
 
 This project is made possible by:
 
-  # Rupi Jain
-  # Sara Sabet
+  - Rupi Jain
+  - Sara Sabet
