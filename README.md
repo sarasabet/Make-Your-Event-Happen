@@ -12,10 +12,10 @@ It's an integratable application that allows user to see all the upcoming events
   Admin can reject/accept each event
 # Final product
 
-!["home page-1"]()
-!["home page-2"]()
-!["bookEvent-01"]()
-!["bookEvent-02"]()
+!["home page-1"](https://github.com/sarasabet/Make-Your-Event-Happen/blob/master/doc/mainPage-01.png)
+!["home page-2"](https://github.com/sarasabet/Make-Your-Event-Happen/blob/master/doc/main-page-.png)
+!["bookEvent-01"](https://github.com/sarasabet/Make-Your-Event-Happen/blob/master/doc/book-day.png)
+!["bookEvent-02"](https://github.com/sarasabet/Make-Your-Event-Happen/blob/master/doc/bookevent.png)
 
 # Setup
 Install dependencies with npm install in the client and server directory
@@ -37,5 +37,5 @@ Setting up databse schema's and seeds rails db:reset in server/backend directory
 
 This project is made possible by:
 
-  Rupi Jain
-  Sara Sabet
+  # Rupi Jain
+  # Sara Sabet
