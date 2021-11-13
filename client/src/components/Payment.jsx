@@ -45,7 +45,7 @@ function Payment() {
                     <div className="row gx-3">
                         <div className="col-12">
                             <div className="d-flex flex-column">
-                                <p className="text mb-1">Person Name</p> <input className="form-control mb-3" type="text" placeholder="Name" value={user.name} />
+                                <p className="text mb-1">Person Name</p> <input className="form-control mb-3" type="text" placeholder="Name"  />
                             </div>
                         </div>
                         <div className="col-12">

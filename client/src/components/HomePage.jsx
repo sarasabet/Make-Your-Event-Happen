@@ -20,6 +20,7 @@ function HomePage() {
 
         <div class="container-right">
           <div class="row">
+          <i class="fas fa-text-size"></i>
             <div class="col">
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit longer

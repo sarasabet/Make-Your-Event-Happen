@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # resources :categories, only: [:create, :index, :new]
   namespace :api do
     resources :events
+    resources :event_bookings
+    resources :payments
     # get '/events/' => "events#show"
     # get '/events/:is_active', to: "events#show"
     # resources :events, params: :start_date
