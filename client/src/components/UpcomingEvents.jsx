@@ -40,14 +40,15 @@ function UpcomingEvents(props) {
         Upcoming Events
       </i>
       </h1>
-<div class="container">
+<div className="container" style={{columnCount: "3"}}>
+<div>
 
           
         {        
            events.map(event => <EventCard key={event.id} event ={event}  onClick={selectedImage}/>)
         }
   
-
+</div>
     </div>
   </div>
 
