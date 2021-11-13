@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     # get '/events/' => "events#show"
     # get '/events/:is_active', to: "events#show"
     # resources :events, params: :start_date
-
+    resources :event_bookings
+    resources :payments
+    resources :users
   
   end
 

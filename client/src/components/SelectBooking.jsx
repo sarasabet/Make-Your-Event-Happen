@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 import './selectbooking.css'
 function SelectBooking(props) {
 
-  // const selectBooking=(e)=>{
-  //   console.log("Helllooooo")
-   
-  // }
   return (
     <div className="book-container">
       <h1>Book Your Event</h1>

@@ -1,18 +1,32 @@
 .parent-container {
-  display:flex;
+  display: flex;
   height: 60vh;
   background-color: hsl(0, 0%, 100%);
   background: linear-gradient(
     to right bottom,
     hsl(0, 0%, 100%) 65%,
     #ffad81 120%
-    
   );
-
-  margin-top:12em;
   justify-content: center;
-
+  padding-top: 3em;
+  padding-left: 2em;
 }
-.container-main{
+.div-container {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-main {
   max-width: 35ch;
 }

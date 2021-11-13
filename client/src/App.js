@@ -15,6 +15,11 @@ import Payment from './components/Payment'
 import EventSummary from './components/EventSummary';
 import EventConfirmation from './components/EventConfirmation'
 import Admin from './components/Admin'
+<<<<<<< HEAD
+=======
+import EventRequest from './components/Admin/EventRequest';
+import Login from './components/Admin/LogIn'
+>>>>>>> e7389b645f2d5939ed86cdce9a30cef225d7df04
 
 import React, { useEffect, useState } from "react";
 import {
@@ -37,26 +42,21 @@ function App() {
     // for demo purposes, hardcoded URL
     axios.get("http://localhost:3001/api/events")
       .then(res => {
-        console.log("data", res.data)
         setEvent(prev => [...prev, res.data])
         //setEvent(res.data)
       })
   }, [])
 
-  const handleInfo= (dateTime) => {
-    console.log("select booking", dateTime)
-    setShow(prev => ({...prev, dateTime}))
-  }
-
-  console.log("Show set", show)
+  
   return (
-    <div className="App container">
-      <Router>
+    <div className="App ">
+       <Router>
 
         <Navigation />
-
+        {/* <Admin /> */}
+        {/* <Payment /> */}
         <Switch>
-        <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
+          <Route path="/showoneevent/:id" render={(props) => <ShowOneEvent {...props} />} />
           <Route path="/eventinfo" exact component={EventInfo} />
           <Route path="/calender" exact component={SelectBooking} />
           <Route path="/signin" exact component={SignIn} />
@@ -71,21 +71,27 @@ function App() {
           </Route>
 
           <Route path="/selecthours">
-            <CalaenderH event={event[0]} getInfo={handleInfo}/>
+            <CalaenderH event={event[0]} />
           </Route>
+
+          <Route path="/admin" exact component={Admin}/>
+          <Route path="/admin/login" exact component={Login}/>
+          
 
           <Route path="/">
             <HomePage />
             <UpcomingEvents events={event[0]} />
             <SelectBooking />
+            <AboutUs />
+            <Footer />
           </Route>
 
-
+  
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
-      </Router>
+      </Router> 
  
 
     </div >

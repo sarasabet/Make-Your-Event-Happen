@@ -1,10 +1,33 @@
 .event-card {
-
-  margin-left:10em;
-  height: 90vh;
+  margin-left: 15em;
   background-color: black;
-  border: 1px, solid, black;
   border-radius: 30px;
-  color: white;
   padding: 1em;
+  margin-bottom: 2em;
+  color: white;
+}
+.event-container {
+  height: 120vh;
+  /* background-color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    to right bottom,
+    hsl(0, 0%, 100%) 65%,
+    #ffad81 120%
+  ); */
+  padding-top: 10em;
+}
+.gradient-eventinfo {
+  /* fallback for old browsers */
+  background: hsl(0, 0%, 100%);
+
+  /* Chrome 10-25, Safari 5.1-6 */
+
+  background: -webkit-linear-gradient(
+    to left,
+    hsl(0, 0%, 100%) 65%,
+    #ffad81 120%
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, hsl(0, 0%, 100%) 65%, #ffad81 120%);
 }

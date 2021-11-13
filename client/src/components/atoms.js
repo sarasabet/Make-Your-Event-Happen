@@ -42,9 +42,11 @@ export const purpose = atom({
 
 export const eventId = atom({
   key: "event_id",
-  default: 0,
+  default: [],
 })
 
-
-
+export const eventRequests = atom({
+  key: "event_req",
+  default: [],
+})
 
