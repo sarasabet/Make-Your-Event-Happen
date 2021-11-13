@@ -5,7 +5,7 @@ import './custom.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot} from 'recoil'
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+// import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 
 ReactDOM.render(

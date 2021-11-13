@@ -1,3 +1,4 @@
+
 import './HomePage.css'
 import React from "react";
 import { Link} from "react-router-dom";
@@ -20,17 +21,10 @@ function HomePage() {
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="container-right">
-          <div class="row">
-          <i class="fas fa-text-size"></i>
-            <div class="col">
-=======
         <div className="container-right">
           <div className="row">
             <div className="col">
             
->>>>>>> e7389b645f2d5939ed86cdce9a30cef225d7df04
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit longer
             </div>

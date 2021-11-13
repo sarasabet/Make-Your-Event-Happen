@@ -15,11 +15,10 @@ import Payment from './components/Payment'
 import EventSummary from './components/EventSummary';
 import EventConfirmation from './components/EventConfirmation'
 import Admin from './components/Admin'
-<<<<<<< HEAD
-=======
+
 import EventRequest from './components/Admin/EventRequest';
 import Login from './components/Admin/LogIn'
->>>>>>> e7389b645f2d5939ed86cdce9a30cef225d7df04
+
 
 import React, { useEffect, useState } from "react";
 import {
